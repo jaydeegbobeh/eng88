@@ -409,7 +409,7 @@ Dynamic NAT: mapping of a private IP address to a public IP address from a group
 - Here public IP address is taken from the pool of IP addresses configured on the end NAT router.
 - Cannot translate 2 ip addresses to a public address.
 
-Port Address Translation NAT: can map multiple private IP addresse to a single public IP address by using a technology known as PAT
+Port Address Translation NAT: can map multiple private IP addresses to a single public IP address by using a technology known as PAT
 - When a client from inside the network communicates to a host in the internet, the router changes the source port (TCP/ UDP) number with another port number.
 - The port mappings are also kept in a table which keep the port mapping and forward the data packet to the originial sender.
 - Adv: multiple internal hosts can share a single IP address for communication => conserving IP addresses

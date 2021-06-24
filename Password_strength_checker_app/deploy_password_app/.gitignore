@@ -1,0 +1,8 @@
+.idea/
+venv/
+.vagrant
+Lib/
+Scripts/
+pvenv.cfg
+build
+env/
