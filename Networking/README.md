@@ -3,7 +3,7 @@ Collection of devices exchanging data.
 
 ## Network components
 **Host** : Computer connected to a network, helps communicate with other hosts in the network. Hosts include clients and servers.
-**Server** : Host whose software allow them to provide services to other hosts (client)
+**Server** : Host whose software allows them to provide services to other hosts (client)
 **Client** : Host that requests the service
 
 ## Server-client architechture
