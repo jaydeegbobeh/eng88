@@ -7,7 +7,7 @@ A popular automation tool
 Allows developers to logically manage monitor and provision resources rather than manually configuring each required resource
 Terraform parses the code ansd translates it into an app program
 
-it has four major commands
+It has four major commands
 terraform init : initialize a working directory containing Terraform configuration files
 terraform plan : creates an execution plan
 terraform apply : executes actions in plan
@@ -17,7 +17,7 @@ terraform destroy : destroy all remote objects
 A tool for building, changing and versioning infrastructure safely and efficiently
 Can manage existing service providers
 
-It works with AWS - Terraform can automate launching an EC2 instance, creating S3 bucket, creating an IAM (Identity and Access Management) group and policy - permissions set for users, azure.
+It works with AWS - Terraform can automate launching an EC2 instance, creating S3 bucket, creating an IAM (Identity and Access Management) group and policy - permissions set for users.
 
 
 ## Creating an EC2 instance with Terraform
@@ -74,3 +74,22 @@ resource "aws_instance" "web-server-instance" {
   key_name = ""
   vpc_security_group_ids = [aws_security_group.yourname_web_server_security_group_tf.id]
 }
+
+In shell:
+terraform validate
+terraform plan
+terraform apply
+terraform show
+ssh ec2-user@dnsname
+
+
+
+
+ami - ami-id
+instance type - t2 micro
+key-name ssh-key
+subnet-id - vpc_id takes first subnet - vpc is the virtual private cloud created for your server - id is not static => can't define it, it's given to you when you create it (dynamic)
+security-group - vpc id
+subnet and security group are given from the vpc_id
+
+## Configuration as a code

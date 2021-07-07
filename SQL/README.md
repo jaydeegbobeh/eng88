@@ -1,4 +1,3 @@
-
 # Database
 
 An organised collection of structured information/ data, typically stored electronically in a computer system.
@@ -155,7 +154,7 @@ try:
   with connect(host="localhost", user="root", password="my_secret_password", database="password_db") as connection:
     print(connection)
     with connection.cursor() as cursor:
-      command= f"INSERT INTO `user_table` (`user_id`, `first_name`, `last_name`, `birthdate`) VALUES (NULL,'{user_fname>
+      command= f"INSERT INTO `user_table` (`user_id`, `first_name`, `last_name`, `birthdate`) VALUES (NULL,'{user_fname}');"
       cursor.execute(command)
       #cursor.execute("SELECT * FROM user_table;")
       connection.commit()
