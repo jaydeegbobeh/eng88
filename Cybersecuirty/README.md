@@ -105,12 +105,12 @@ e.g for a class test each student's test score is a piece of data, the average s
 ## Cyber kill chain
 
 graph TD;
-	Reconnaissance(choose target, identifiy vulnerabilities)-->Weaponization(create malware weapon like a virus to exploit the vulnerabilities fo the target)
-	Weaponization(create malware weapon like a virus to exploit the vulnerabilities for the target)-->Delivery(transmitting the weapon to the target e.g USB drive, email attachment)	
-	Delivery(transmitting the weapon to the target e.g USB drive, email attachment)-->Exploitation(program code of malware is triggered, exploiting the target's vulnerability)
-	Exploitation(program code of malware is triggered, exploiting the target's vulnerability)-->Installation(malware installs an access point for intruder- a backdoor)
-	Installation(malware installs an access point for intruder- a backdoor)-->Command and control(malware gives intruder access in the network/system)
-	Command and control(malware gives intruder access in the network/system)-->Actions on objective(once attacker gains persistent access, they fufill their purpose e.g encryption for ransom)
+	Reconnaissance(choose target, identifiy vulnerabilities)-->Weaponization(create malware weapon like a virus to exploit the vulnerabilities fo the target);
+	Weaponization(create malware weapon like a virus to exploit the vulnerabilities for the target)-->Delivery(transmitting the weapon to the target e.g USB drive, email attachment);	
+	Delivery(transmitting the weapon to the target e.g USB drive, email attachment)-->Exploitation(program code of malware is triggered, exploiting the target's vulnerability);
+	Exploitation(program code of malware is triggered, exploiting the target's vulnerability)-->Installation(malware installs an access point for intruder- a backdoor);
+	Installation(malware installs an access point for intruder- a backdoor)-->Command and control(malware gives intruder access in the network/system);
+	Command and control(malware gives intruder access in the network/system)-->Actions on objective(once attacker gains persistent access, they fufill their purpose e.g encryption for ransom);
 
 
 # Cryptology
@@ -143,13 +143,13 @@ Two classes of encryption used to provide data confidentiality- differ in how th
 	- Symmetric encryption is commonly used as it uses less resources (less bits), it also has the advantage of speed (useful for online banking)
 	- Initialisation vector
 
-2. Assymetric encryption algoriths: use different keys to encrypt and decrypt data
+2. Asymmetric encryption algoriths: use different keys to encrypt and decrypt data
 	- Use public key (encryption) and private key (decryption)
 	- Less than 1024 bits is not recommended
 	- Alogrithms e.g Diffie-Hellman 512,1024, 2048, 3072, 4096 key length, Digital Signature Standard 512-1024 key length
-- Assymetric Encryption for confidentiality
+- Asymmetric Encryption for confidentiality
 	- public key (encrypt) + private key(decrypt) = confidentiality
-- Assymetric Encryption for authentication
+- Asymmetric Encryption for authentication
 	- private key (encrypt) + public key(decrypt) = authentication - ensure message is coming from someone with the correct private key
 
 
@@ -167,8 +167,14 @@ Two classes of encryption used to provide data confidentiality- differ in how th
 ### Protocols-based on asymmetric key algorithms
 - Internet key exchange (IKE): fundamental compontent 
 
-## Symmetric vs Assymetric 
-*add table
+## Symmetric vs Asymmetric 
+| Radix             | Symmetrical Encryption                      | Asymmetrical Encryption                                                | 
+|-------------------|---------------------------------------------|------------------------------------------------------------------------|
+| Number of keys    |Use same key to encrypt/decrypt data         |Use different keys to encrypt/decrypt                                   | 
+| Key length        |Short key length (40 to 256 bits)            |Key lengths are long (512-4096 bits)                                    |
+| Speed/ performance|Faster than asymmetric                       |Computationally tasking => slower                                       |
+| Usage             |Used for encrypting bulk data e.g VPN traffic|Used for quick data transactions e.g HTTPs when accessing your bank data| 
+ 
 
 
 ## Cryptographic Hash Operation
@@ -263,9 +269,9 @@ Methods uses in cyptanalysis:
 - Chosen-plaintext method
 	- Attacker can choose random plaintexts to be encrypted and obtain the corresponding ciphertexts, the information gained reduces the security of the encryption scheme, the attacker could even calculate the secret key
 - Chosen-ciphertext method
-	- Attacker gains info by choosing a ciphertext and obtaining decryption unde
+	- Attacker can analyse any chosen cipher texts together with their corresponding plaintexts, with the goal of acquiring the secret key
 - Meet-in-the-middle method
-	-
+	- A plaintext attack that reduces the number of brute-force permutsations required to decrypt text that has been encrypted by more than one key, attacker encrypts plaintext using various keys to achieve an intermediate ciphertext
 
 
 # Access control
