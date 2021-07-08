@@ -5,5 +5,5 @@
 - [Networking](https://github.com/jaydeegbobeh/eng88-cybercourse/tree/main/Networking)
 - [SQL](https://github.com/jaydeegbobeh/eng88-cybercourse/tree/main/SQL)
 - [DevOps](https://github.com/jaydeegbobeh/eng88-cybercourse/tree/main/DevOps)
-
+- [Cybersecurity](https://github.com/jaydeegbobeh/eng88-cybercourse/tree/main/Cybersecuirty)
 

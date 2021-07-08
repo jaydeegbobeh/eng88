@@ -205,7 +205,7 @@ Digital signatures
 	- Authentic: cannot be forfed and provides proof that the signer and no one else signed the doc
 	- Unalterable: after signed, a document cannot be altered
 	- Non-reusable: document signature cannot be transferred to another doc
-	-
+	- Non-repudiated: signed document is considered to be the same as a physical document
 
 ### Digital Signature standards 
 - Digital Signature Algorithm
@@ -215,11 +215,12 @@ Digital signatures
 ### Code signing
 Digital signatures are commonly used to provide assurance of the authenticity and integrity of software code - users can verify that code is legitimate.
 Digitally signing code provides several assurances about the code.
+
 - Code is authentic and sourced by the publisher
-- 
--
--
-O O
+- The code has not been modified since itleft the software publisher
+- The publisher undeniably published the code, this provides non-repudiation of publishing
+
+
 ### Digital certificates
 Equivalent to an electronic passport. Allows users, hosts and organisations to securely exchange info over the internet.
 - Verifies identities between users in a transaction
@@ -230,15 +231,160 @@ Equivalent to an electronic passport. Allows users, hosts and organisations to s
 ### Public key Infrastructure
 
 Certificate database
-PKI certificate authority - there's a hierachy Root ca (give to users and subordinate ca), Subordinate ca (give to users)
+PKI certificate authority - there's a hierachy: Root ca (give to users and subordinate ca), Subordinate ca (give to users)
 Certificate store (on your pc)
 PKI certificate 
 
-**X.509 and Application**
 
 **Certificate enrolment, authentication and revocation**
 
+- Enrolment
+	- The certificate authority permits a user's request to provide them with a certificate
+	-  Requester generates a key pair (public and private), sends the public key to the CA with the request, once accepted they receive a CA signed public key and a certificate which they can install
 - Authentication
+	- Identify users, machines or devices using digital certificates
+	- An electronic document based on the idea of a passport
+	- Contains the digital identity of a user including a public key and the digital signiture of a certification authority
+ 	- Digital certificates prove the ownership of a public key issued by the certification authority
 - Revocation
 	- Sometimes the certificate must be revoked e.g a digital certificate can be revoked if a key is compromised/ no longer needed
 	- Two common methods for revocation: Certification Revocation List, Online Certificate Status Protocol
+
+## Cryptanalysis
+The study of ciphertext, ciphers and cryptosystems with the aim of understanding how they work and finding and improving techniques for defeating/ weakening them 
+
+Methods uses in cyptanalysis:
+- Brute-force method
+	- Defeating a scheme by entering a large number of possibilites to break a cipher
+- Ciphertext method
+	- Attacker only has access to a set of ciphertexts, attacker attempts to extract the corresponding plaintexts or the key from the ciphertext
+- Known-plaintext method
+	- Attacker has access to both plaintext and its encrypted version (the ciphertext), these can be used to reveal secret keys
+- Chosen-plaintext method
+	- Attacker can choose random plaintexts to be encrypted and obtain the corresponding ciphertexts, the information gained reduces the security of the encryption scheme, the attacker could even calculate the secret key
+- Chosen-ciphertext method
+	- Attacker gains info by choosing a ciphertext and obtaining decryption unde
+- Meet-in-the-middle method
+	-
+
+
+# Access control
+
+
+## Access Control Models
+
+- DAC: Discretionary access control
+- MAC: Mandatory access control
+	- Restricts the ability individual resource owners have to grant or deny access to resource objects in a file system
+- RBAC: Role-based access control
+	- Organizations use RBAC to provide their employees w/ varying levels of access based on their roles and responsibilities (Accounting manager will have different privilege than a junior accountant)
+- ABAC: Attribute-based- access contol
+	-
+- RBAC: Rule-based access control
+- TAC: Time-based access control
+- The principle of least privilege
+	- Privilege escalation
+## AAA Framework
+
+- Authentication: users and admins must prove who they are (username and password, id card w/ magnet, certificate, ssh key)
+- Authorization: authorization services determine which resources the user can access and what operations they are permitted to perform (controlled by the server what can/ can't a user do)
+- Accounting: accounting records hold info about- what the user does, what's being accessed, amount of time the resource is accessed, changes that are made 
+
+## AAA Architecture
+- Local AAA Authentication: sometimes known as self-contained authentication- it authenticates users against locally stored usernames/ passwords
+- Server-Based AAA Authentication - authenticates against a central AAA server that contains the usernames/ passwords for all users
+- LDAB
+
+## AAA Protocols
+- Remote Authentication Dial-in User Service (RADIUS): supports centralized authentication authorization and accounting management for clients that establish connection with a networj and intend to use any of the provided services
+- Terminal Access Controller Access Control System (TACAS)
+- TACAS+ 
+
+
+# SSH key
+- Generate authentication key (public/private RSA key pair) on the client computer
+- Setup SSH on server to use this authentication key
+- When you want to access server, you can now access it without entering username/password
+	- It recognises the shh key when you copy the public key to the authorised keys files
+
+# Authentication
+
+The process of recognising a user's identity to allow/deny resources.
+
+## Fundamentals
+
+- Something you know e.g password or PIN 
+- Something you carry/have such as flash drive or proximity card
+- Something you are e.g fingerprints
+
+## Passwords
+
+- Passwords are the most common methods of authentication
+	- Can contain letters, numbers, special characters
+- The average person has about 25 different online accounts but only 54% of users use different passwords accoss these accounts
+- At one time 86% of > 2 mil breached passwords were identical to passwords already breached
+- Top most common passwords (123456, qwerty, password etc) are still used regulary
+- [NCSC top 100K commonly used passwords](https://www.ncsc.gov.uk/static-assets/documents/PwnedPasswordsTop100k.txt)
+
+** Good Passwords **
+- The longer the password the more difficult it is to crack
+- Always use a combination of character, numbers and special characters
+- Use a variety of passwords
+- Don't keep a pattern between passwords
+
+** Bad Passwords **
+- Dictionary word
+- Using personal information
+- Using patterns
+- Using character substitutions
+- Using numbers and special characters only at the end
+- Using common passwords
+- Using anything but a random password
+
+
+** Password Attacks and Defence **
+- Attacks
+	- Brute-force attack: submit many passwords in hope of eventually guessing the correct combination, systematically check all possible passwords
+	- Rainbow Table attack: using a rainbow hash table to crack the passwords stored in a database system
+- Defence
+	- Salt technique prevents rainbow table attack
+	- Key stretching, converting a password to a longer and more random key for encryption
+
+## Token Authentication
+A material device that is used to access secure systems
+- Common forms include a dongle, card or RFID chip
+- Tokens make it more difficult for hackers to access an account since they must have long credentials and tangible device itself which is much harder for the attacker to obtain
+
+## Biometric Authentication
+
+Advantages:
+- Can be easily compared to authorized features saved in a databse
+- Can control physical access when installed on entrances and doors
+- Can be added into multi-factior authentication process password + voice or token + face recognation
+
+Types
+- Facial recognition - e.g measuring distance between eyes, chin shape disadvantages: people who look alike, face at different angles, algorithm is not complex enough
+- Fingerprint scanners - can even vein match (vascular biometrics)
+- Voice identification - say a sentence or a word to authenticate
+- Eye scanners - iris recognition, retina scanner - glasses can cause issues
+
+## Certificate-based Authentication
+- Identify users, machines or devices using digital certificates
+- An electronic document based on the idea of a passport
+- Contains the digital identity of a user including a public key and the digital signiture of a certification authority
+- Digital certificates prove the ownership of a public key issued by the certification authority
+
+## Multifactor Authentication
+
+- Requires two or more independent ways to identify a user
+- e.g codes generated from user's smartphone, fingerprints, facial recognition
+- Increase the confidence of users as there are multiple layers of security
+- Good defence against account hacks, but disadvantage: people may lose their phones or SIMs => can't generate an authentication code
+
+
+## Authentication Protocols
+- NTLM - suite of Microsoft security protocols intended to provide authentication, integrity and confidentiality to users
+- KERBEROS - uses tickets to authenticate, uses symmetric key
+- PAP - password authentication protocol (weak, vulnerable protocol)
+- CHAP - challenge handshake authentication protocol
+- Secure Sockets Layer (SSL)/Transport Layer Security (TLS) - client uses the servers public key to encrypt the data that is used to compute the secret key, server can only generate the secret key if it can decrypt the data with the correct private key
