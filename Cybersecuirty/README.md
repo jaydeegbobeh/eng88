@@ -42,7 +42,9 @@ Data vs Information?
 e.g for a class test each student's test score is a piece of data, the average score of the class is a piece of information
 
 ### 3rd dimension: safeguards
-- 
+- Human factors
+- Policies and practices
+- Technology
 
 ## Key terms
 - Asset: an asset is something that needs to be protected e.g data, device
@@ -104,13 +106,13 @@ e.g for a class test each student's test score is a piece of data, the average s
 
 ## Cyber kill chain
 
-graph TD;
-	Reconnaissance(choose target, identifiy vulnerabilities)-->Weaponization(create malware weapon like a virus to exploit the vulnerabilities fo the target);
-	Weaponization(create malware weapon like a virus to exploit the vulnerabilities for the target)-->Delivery(transmitting the weapon to the target e.g USB drive, email attachment);	
-	Delivery(transmitting the weapon to the target e.g USB drive, email attachment)-->Exploitation(program code of malware is triggered, exploiting the target's vulnerability);
-	Exploitation(program code of malware is triggered, exploiting the target's vulnerability)-->Installation(malware installs an access point for intruder- a backdoor);
-	Installation(malware installs an access point for intruder- a backdoor)-->Command and control(malware gives intruder access in the network/system);
-	Command and control(malware gives intruder access in the network/system)-->Actions on objective(once attacker gains persistent access, they fufill their purpose e.g encryption for ransom);
+- Reconnaissance(choose target, identifiy vulnerabilities)
+- Weaponization(create malware weapon like a virus to exploit the vulnerabilities for the target)
+- Delivery(transmitting the weapon to the target e.g USB drive, email attachment)
+- Exploitation(program code of malware is triggered, exploiting the target's vulnerability)
+- Installation(malware installs an access point for intruder- a backdoor)
+- Command and control(malware gives intruder access in the network/system)
+- Actions on objective(once attacker gains persistent access, they fufill their purpose e.g encryption for ransom);
 
 
 # Cryptology
