@@ -173,3 +173,72 @@ Two classes of encryption used to provide data confidentiality- differ in how th
 
 ## Cryptographic Hash Operation
 
+An algorithm that takes an arbitray amount of data input (credential) and produces a fixed-sized output (bit array) on enciphered text called a hash value.
+
+Hashes are used to verify and ensure data intergrity
+Based on one-way maths funct - easy to compute but v. hard to reverse this calc
+Can be used to verify authentication
+
+Aritrary length text --> Hash function --> Hash value
+
+### Well known Hash functions
+1. Message Digest 5 (MD5)
+2. Secure Hash Algorithm 1 (SHA-1)
+3. Secure Hash Algorithm 2 (SHA-2) - SHA-384
+
+### Hash Message Authentication Code (HMAC)
+- To add authentication, HMAC uses an additional secret key as input to the hash function
+- Output HMAC - an authenticated fingerprint
+
+### Password salting
+
+- The addition of a unique, random string of characters (known only to the site) to the end of each password to create a different hash value
+- e.g g Password 546789gfvgrTY
+- Salt = SALT
+- Salted_Password = 546789gfvgrTYSALT
+- Hash(Password) = <>Hash(Salted_Password)
+
+## Public Key Infrastructure
+Digital signatures
+- A mathematical technique used to provide authenticity, integrity and non-repudiation
+- Properties of digital signatures
+	- Authentic: cannot be forfed and provides proof that the signer and no one else signed the doc
+	- Unalterable: after signed, a document cannot be altered
+	- Non-reusable: document signature cannot be transferred to another doc
+	-
+
+### Digital Signature standards 
+- Digital Signature Algorithm
+- Rivest-Shamir Adelman Algorithm
+- Elliptic Curve Digital Signature Algorithm
+
+### Code signing
+Digital signatures are commonly used to provide assurance of the authenticity and integrity of software code - users can verify that code is legitimate.
+Digitally signing code provides several assurances about the code.
+- Code is authentic and sourced by the publisher
+- 
+-
+-
+O O
+### Digital certificates
+Equivalent to an electronic passport. Allows users, hosts and organisations to securely exchange info over the internet.
+- Verifies identities between users in a transaction
+- Provide assurance that published content has not been modified by any authorized actors
+- Used to exchange public keys for encrypting and decrypting web content - public key certificate proves ownership of the public key
+- Requires a 3rd party to validate the certificate
+
+### Public key Infrastructure
+
+Certificate database
+PKI certificate authority - there's a hierachy Root ca (give to users and subordinate ca), Subordinate ca (give to users)
+Certificate store (on your pc)
+PKI certificate 
+
+**X.509 and Application**
+
+**Certificate enrolment, authentication and revocation**
+
+- Authentication
+- Revocation
+	- Sometimes the certificate must be revoked e.g a digital certificate can be revoked if a key is compromised/ no longer needed
+	- Two common methods for revocation: Certification Revocation List, Online Certificate Status Protocol
