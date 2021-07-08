@@ -334,13 +334,13 @@ The process of recognising a user's identity to allow/deny resources.
 - Top most common passwords (123456, qwerty, password etc) are still used regulary
 - [NCSC top 100K commonly used passwords](https://www.ncsc.gov.uk/static-assets/documents/PwnedPasswordsTop100k.txt)
 
-** Good Passwords **
+**Good Passwords**
 - The longer the password the more difficult it is to crack
 - Always use a combination of character, numbers and special characters
 - Use a variety of passwords
 - Don't keep a pattern between passwords
 
-** Bad Passwords **
+**Bad Passwords**
 - Dictionary word
 - Using personal information
 - Using patterns
@@ -350,7 +350,7 @@ The process of recognising a user's identity to allow/deny resources.
 - Using anything but a random password
 
 
-** Password Attacks and Defence **
+**Password Attacks and Defence**
 - Attacks
 	- Brute-force attack: submit many passwords in hope of eventually guessing the correct combination, systematically check all possible passwords
 	- Rainbow Table attack: using a rainbow hash table to crack the passwords stored in a database system
