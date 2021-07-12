@@ -83,7 +83,6 @@ e.g for a class test each student's test score is a piece of data, the average s
 - Spyware: a form of malware that hides on a device providing real-time info e.g gives them access to steal bank account details
 - Phishing attacks: when a cybercriminal attempts to lure individuals into providing sensitive data
 - DoS attack/Distributed denial of service (DDoS) attakcs: aims to disrupt a computer network by flooding the network with fake traffic to overwhelm it - in DDoS multiple systems target a single system
-- 
 - Ransomeware: a type of malware, denies access to a computer system or data until a ransom is paid e.g REvil a file encryption virus encrypts all files and demands money from the victim
 - Zero-day exploits: a flaw in software, hardware, firmware that is unknown to the parties responsible for patching the flaw (take advantage of vulnerabilites)
 - Advanced persistent threat: when an unauthorized user gains access to system/network and remains there undetected for a long period of time (until they are discovered they have access)
@@ -129,10 +128,12 @@ e.g for a class test each student's test score is a piece of data, the average s
 Cipher- an algorithm for performing encryption/decryption that consists of a series of well-defined steps that can be followed as a procedure.
 
 - Substitution cipher
+	- ADD STUFF HERE   units of plaintext are replaced with the ciphertext
 - Transposition cipher
 	- No letters are replaced; simply rearranged
-	- Key for transposition cipher (e.g rail fnece cypher key=3 encrypt by text in 3 diagonal rows)
+	- Key for transposition cipher (e.g rail fence cypher key=3 encrypt by text in 3 diagonal rows)
 - Caesar cipher
+	- replace each plaintext letter with a different one a fixed number of places down the alphabet
 
 ## Encryption classes
 
@@ -152,7 +153,7 @@ Two classes of encryption used to provide data confidentiality- differ in how th
 - Asymmetric Encryption for confidentiality
 	- public key (encrypt) + private key(decrypt) = confidentiality
 - Asymmetric Encryption for authentication
-	- private key (encrypt) + public key(decrypt) = authentication - ensure message is coming from someone with the correct private key
+	- private key (encrypt) + public key(decrypt) = authentication - ensure message is coming from someone with the correct private key, integrity of message - it has not been changed
 
 
 ### Diffie-Hellman
@@ -165,7 +166,7 @@ Two classes of encryption used to provide data confidentiality- differ in how th
 	- SSH data is exchanged
 
 ## RSA algorithm
-
+ADD STUFF 
 ### Protocols-based on asymmetric key algorithms
 - Internet key exchange (IKE): fundamental compontent 
 
@@ -191,7 +192,7 @@ Aritrary length text --> Hash function --> Hash value
 
 ### Well known Hash functions
 1. Message Digest 5 (MD5)
-2. Secure Hash Algorithm 1 (SHA-1)
+2. Secure Hash Algorithm 1 (SHA-1) - SHA-256
 3. Secure Hash Algorithm 2 (SHA-2) - SHA-384
 
 ### Hash Message Authentication Code (HMAC)
@@ -213,7 +214,7 @@ Digital signatures
 	- Authentic: cannot be forfed and provides proof that the signer and no one else signed the doc
 	- Unalterable: after signed, a document cannot be altered
 	- Non-reusable: document signature cannot be transferred to another doc
-	- Non-repudiated: signed document is considered to be the same as a physical document
+	- Non-repudiated: signed document is considered to be the same as a physical document, cannot deny its validity
 
 ### Digital Signature standards 
 - Digital Signature Algorithm
@@ -258,6 +259,8 @@ PKI certificate
 	- Sometimes the certificate must be revoked e.g a digital certificate can be revoked if a key is compromised/ no longer needed
 	- Two common methods for revocation: Certification Revocation List, Online Certificate Status Protocol
 
+XFO9
+
 ## Cryptanalysis
 The study of ciphertext, ciphers and cryptosystems with the aim of understanding how they work and finding and improving techniques for defeating/ weakening them 
 
@@ -282,6 +285,7 @@ Methods uses in cyptanalysis:
 ## Access Control Models
 
 - DAC: Discretionary access control
+	-
 - MAC: Mandatory access control
 	- Restricts the ability individual resource owners have to grant or deny access to resource objects in a file system
 - RBAC: Role-based access control
@@ -395,4 +399,55 @@ Types
 - KERBEROS - uses tickets to authenticate, uses symmetric key
 - PAP - password authentication protocol (weak, vulnerable protocol)
 - CHAP - challenge handshake authentication protocol
-- Secure Sockets Layer (SSL)/Transport Layer Security (TLS) - client uses the servers public key to encrypt the data that is used to compute the secret key, server can only generate the secret key if it can decrypt the data with the correct private key
+- Secure Sockets Layer (SSL)/Transport Layer Security (TLS) - client uses the servers public key to encrypt the data that is used to compute the secret key, server can only generate the secret key if it can decrypt the data with the correct private key.
+
+
+# Web App Authentication
+
+To associate and incoming request e.g HTTP
+
+## Cookie-based authentication
+- A small piece of data created by a server and sent to your browser when visiting a website
+- Browsers often store and send the cookie back to the server to tell that the request is comming from the same browser to keep the user authenticated
+	- Read browser cookies as key-value pairs
+
+1. Client sends login request w/ credentials to backend server
+2. Server validates credentials, if login successful web server creates a session in the database and include a set-cookie header on the response containing a unique ID in the cookie object
+3. Browser saves cookie locally, as long as the user stays logged in, cliend must send the cookie in all the requests to the server
+	- server then compares session ID stored in the cookie against the one one in the database to verify validity
+4. During logout, server makes the cookie xpire by deleting it from the server
+
+### Advantages of cookie-based authentication
+- Using cookies in authentication makes the app stateful
+	- Efficient in tracking/personalizing the state of a user
+- Cookies are small in size => efficient to store them on the client side
+- They can be HTTP-only => impossible to read on the client-side, improves protection against **Cross-site scripting** attakcs
+- Cookies are added to the request automatically => developer does not have to implement them manually (less code)
+- Client is given option to reject **non-essential cookies**, web authentication cookies cannot be rejected if you want access to site
+
+### Disadvantages of cookie-based authentication
+- Vulnerable to Cross-site request forgery attack
+- Need to store session data in database, less scalable when site has many users at one time
+- Client must send cookie on every request, even w/ URLs that don't need authentication for access
+
+## Token-based authentication
+- Used to store the user's state on the client machine
+- The JSON Web Token (JWT) is an open standard that defines a way of securly transmitting info between a cliend and a server as a JSON object
+- Anatomy of JWT token: 3 parts searated by dots
+- Stateless, self contained object
+
+header.payload.signature - do hashing for these values (SHA-256)
+
+- User submits login credentials to backend server
+- Upon request, server verifies credentials before generating an encrypted JWT w/ secret key and sends back to the client
+- On client side browser stores the token locally using local storage, session storage or cookie storage
+- On future requests, JWT is added to authorization header, and server will validate its signature by decoding the token before sending the response
+- On logout operation, token on client-side is destroyed without server interation?
+
+### Advantages of token-based authentication
+- Stateless, webserver does not need to keep a record of tokens as they are **self-contained** - server just need to sign tokens on successful login and verify incoming tokens in requests are valid.
+- 
+-
+
+## Revoking cookies/json
+ 
