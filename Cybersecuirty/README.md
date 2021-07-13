@@ -450,4 +450,176 @@ header.payload.signature - do hashing for these values (SHA-256)
 -
 
 ## Revoking cookies/json
- 
+
+
+# Penetration Testing (PenTesting)
+An authorised, simulated attack on a system to evaluate the security of the system and its vulnerabilities
+
+- Is a method for gaining assurance in the security of an IT system
+- By attempting to breach some or all of a system's security
+- Using the same tools and techniques
+- As an adversary might
+
+## Cybersecurity colours
+1. Blue team (the defenders): they are responsible for implementing defensive security damage control and incident response
+2. Red red team (breakers/attackers): commissioned to perform "ethical hacking" on an organization, 
+3. White team (admins): group responsible for refereeing an engagement between a red team of mock attackers and a blue team of actual defenders
+4. Yellow team (builders): team responsible for developing the security system of an organization
+
+## Hackers
+1. Black hat hackers - attackers
+2. White hat hackers - ethical hacker
+3. Grey hat hackers - a hacker who may sometimes violate ethical standards but don't hve malicious intent
+
+## Testing colours
+1. Whitebox testing: white hat hacker has full knowledge of the system being attacked
+2. Blackbox testing
+3. Greybox testing
+
+
+## PenTesters
+
+- They can be internal employees or a 3rd party penetration tester
+- Should be performed by qualified and experienced staff only (can trust that they won't leak any info about you system)
+- Pentests cannot be entirely procedural: exhaustive set of test cases cannot be drawn up => quality of a pen test is cosely linked to the abilities of the pentesters 
+
+
+## PenTesting objectives
+- Vulnerability identification
+- Scenario driven testing aimed at identifying vulnerabilities
+- Scenario driven testing of detection and response capability
+
+
+## PenTesting Scope
+
+- Well-scoped penetration test can give confidence:
+	- Products and security controls tested have been configured in accordance with good practice
+	- No common/ publicly known vulnerabilities in the tested components at the time of the test
+
+## PenTesting results
+- Typically, pen tests are used to identify level of technical risk from software/hardware vulnerabilities
+- Setting limits will affect the results: what techniques are used, what targets are allowed, how much knowledge of the system is given to the testers beforehand and how much knowledge of the test is given to system admins can vary within the same test regime
+-
+
+## PenTesting expiry
+- Not common for a year or more to elapse between penetration tests
+-
+
+## PenTesting startup point
+- External network penetration test: an external network penetration test is typically what most people think of when talking about pentesting
+- Internal network penetration test: simulates either the actions a hacker might take once access has been gained to a network, or those of an employess with access that they escalate
+
+
+## PenTesting methods/target
+- Physical penetration testing
+- Social engineering penetration testing - identify weakness in a person, group of people: phishing, impersonation, leave a USB device containing malicious code, find passwords by looking at emplooyees' desks
+- Web Application penetration testing - evealuate the development, design and coding of your website/web app to find any area what exposed sensitive customer info/ company data
+- Client side penetration testing -
+- Cloud security
+
+## Blindness level
+- Targeted(blindless) penetration testing - 
+- Blind penetration testing -
+- Double blind penetration testing
+
+##
+PenTesting phases
+- Pre-engagement interactions
+- Reconnaissance: gather as much inteligence on the organization and the potential targets for exploit
+- Scanning:
+- Threat modeling: mapping out potential threats: Where am I most vulnerable to attack? What are the most relevant threats? what do I need to do to safeguard against these threats?
+- Exploitation: with a map of all possible vulnerabilities and entry points, pentester begins to test the exploits found within the network, applications and data
+- Foothold installation
+- Analysis and reporting
+- Clean up and remediation
+
+
+## Advantages of pentesting
+
+## Disadvantages of pentesting
+
+
+## Reconnaissance
+Discovering and collection info about a system
+
+### Foorprinting
+The process of collecting as much info as possible about the target system, finding ways to penetrate the system
+
+- Get an overview of the secuirty posture, the overall status of cybersecurity readiness (e.g firewalls)
+	- Controls and processes you have in place to protect against cyber attacks
+	- Ability to detect attacks
+	- Ability to react and reocver from security events
+	- Level of automation in your security program
+- Reduce attack area
+- Identify vulnerabilities
+- Draw network map
+
+### OSINT Sources
+- Surface web
+- Deep web
+- Dark web
+
+### OSINT Use cases
+
+- Public civilian for basic knowledge, business and public opinions
+- Governements for any national threat analysis/services
+- Cybersecurity professionals
+	- Cyber defence
+	- Pentesters
+	- Security analysis
+	- Cybercrime groups
+
+### OSINT Tools
+
+- Domain and IP search
+- Exposed data on the enterprise website
+- Exposed data already on the internet
+- Hidden data in files
+- Connected devices search
+
+#### WHOIS - domain info
+1. Who Is https://www.who.is
+2. Domain Tools https://whois.domaintools.com/
+3. ICANN lookup https://lookup.icann.org/
+4. Central ops https//centralops.net/cokal
+5. WHOIS Search https://main.whoisxmlapi.com/
+
+DNSRecon (python script)
+- Find DNS info with python
+```bash
+dnsrecon -D subdomains-top1mil-5000.txt -d spartaglobal.com -t brt > dns_recon_sparta.txt
+```
+
+#### Google hacking and dorking 
+- operator_name:keyword
+- e.g
+	- intitle:
+	- inurl:
+	- intext:
+	- define:
+	- site:
+	- phonebook:
+
+#### Harvester
+
+#### DShield
+
+#### Virus total
+
+#### FOCA
+
+#### Metagoofil
+
+#### Shodan
+
+#### Wappalyzer - firebox add-on
+
+#### crt.sh
+
+#### Sublist3r
+
+#### [OSINT Framework](osintframework.com)
+
+
+
+
