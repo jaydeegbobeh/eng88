@@ -18,6 +18,7 @@ Linux is a family of open source Unix-like OS - source code is publically access
 **Applications**
 
 **Utilities**
+![alt text](https://raw.githubusercontent.com/jaydeegbobeh/eng88-cybercourse/main/Computer_Windows_Linux_Virtualisation_Cloud/Linux/linux_architecture.png)
 
 ## Distribution
 
@@ -39,6 +40,4 @@ There are many distros of Linux e.g:
 	- There is one way of reading/writing everything.
 	- The same set of tools can be used on all input/output resources - documents, directories, hard-drives, keyboards etc.
 
-**How does Linux read files?**
-
-- 
+ 
