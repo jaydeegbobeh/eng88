@@ -3,6 +3,7 @@
 Linux is a family of open source Unix-like OS - source code is publically accessible so that anyone can read, modify and distribute the code.
 
 ## Architecture 
+![alt text](https://raw.githubusercontent.com/jaydeegbobeh/eng88-cybercourse/main/Computer_Windows_Linux_Virtualisation_Cloud/Linux/linux_architecture.png)
 
 **Hardware layer** - Linux OS contains a hardware layer that consists of peripheral devices e.g CPU, HDD, RAM
 
@@ -18,7 +19,7 @@ Linux is a family of open source Unix-like OS - source code is publically access
 **Applications**
 
 **Utilities**
-![alt text](https://raw.githubusercontent.com/jaydeegbobeh/eng88-cybercourse/main/Computer_Windows_Linux_Virtualisation_Cloud/Linux/linux_architecture.png)
+
 
 ## Distribution
 
