@@ -7,3 +7,4 @@
 - [DevOps](https://github.com/jaydeegbobeh/eng88-cybercourse/tree/main/DevOps)
 - [Cybersecurity](https://github.com/jaydeegbobeh/eng88-cybercourse/tree/main/Cybersecuirty)
 
+![alt text](https://github.com/jaydeegbobeh/eng88-cybercourse/blob/main/Cybersecurity%20mindmap.png)
