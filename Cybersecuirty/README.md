@@ -13,7 +13,7 @@ CNSS
 A model framework for establishing and evaluating information security programs
 
 1. Desired goals 
-	- Confidentiality: what is?
+	- Confidentiality: 
 	- Integrity
 	- Availability
 2. Data states
@@ -51,7 +51,7 @@ e.g for a class test each student's test score is a piece of data, the average s
 - Vulnerability: a weakness or gap in protection efforts - use pentesting to find bugs and determine their severity
 - Exploit: a program, piece of code, tool designed to take advantage of the vulnerabilities 
 - Threat: (hypothetical event) malicious act that seeks to damage data, steal data or cause any disruption
-- Risk: intersection of asssets, threats and vulnerabilities - evaluate to existence of a vulnerability of an asset and determine the severity/chance of a potential threat.
+- Risk: intersection of asssets, threats and vulnerabilities - evaluate the existence of a vulnerability of an asset and determine the severity/chance of a potential threat.
 
 ## Causes of Vulnerabilities
 1. Development/ design errors
@@ -92,7 +92,7 @@ e.g for a class test each student's test score is a piece of data, the average s
 - Theft of money: gaining access to back accounts/ credit card numbers
 - Data manipulation: change data in a system
 - Data destruction: delete data
-- Man-in-the-middle attack: alters communication between two parties who beliebe they are communicating with each other
+- Man-in-the-middle attack: alters communication between two parties who believe they are communicating with each other - alice & bob
 - Rogue software: malware disguised as real software
 - Unpatched software: software that has known security weaknesses that are fixed in a later release but not yet updated
 - Data centre disrupted by disaster: data centre could be disrupted by flooding
@@ -119,7 +119,7 @@ e.g for a class test each student's test score is a piece of data, the average s
 ## Cryptography
 - The study of secure communications techniques that allow only the sender and intended recipient of a message to view its contents.
 - Encryption: the process which transforms the orginal information into an unrecognizable form
-	- Add a key to plain text, use algorith to convert plain text into cipher(unrecognisable) text
+	- Add a key to plain text, use algorithm to convert plain text into cipher(unrecognisable) text
 
 - Decryption: the process of converting encoded/encrypted data in a form that is readable and understood by a human or a computer
 	- Use key algorith to translate cipher text to plain text (readable)
@@ -166,7 +166,8 @@ Two classes of encryption used to provide data confidentiality- differ in how th
 	- SSH data is exchanged
 
 ## RSA algorithm
-ADD STUFF 
+
+Algorithm for public-key cryptography, works on basic of a public and private key. Public key used to encrypt data before it's sent to the server on which the certificate is located.
 ### Protocols-based on asymmetric key algorithms
 - Internet key exchange (IKE): fundamental compontent 
 
@@ -211,7 +212,7 @@ Aritrary length text --> Hash function --> Hash value
 Digital signatures
 - A mathematical technique used to provide authenticity, integrity and non-repudiation
 - Properties of digital signatures
-	- Authentic: cannot be forfed and provides proof that the signer and no one else signed the doc
+	- Authentic: cannot be forced and provides proof that the signer and no one else signed the doc
 	- Unalterable: after signed, a document cannot be altered
 	- Non-reusable: document signature cannot be transferred to another doc
 	- Non-repudiated: signed document is considered to be the same as a physical document, cannot deny its validity
@@ -259,7 +260,7 @@ PKI certificate
 	- Sometimes the certificate must be revoked e.g a digital certificate can be revoked if a key is compromised/ no longer needed
 	- Two common methods for revocation: Certification Revocation List, Online Certificate Status Protocol
 
-XFO9
+XFO9 - digit
 
 ## Cryptanalysis
 The study of ciphertext, ciphers and cryptosystems with the aim of understanding how they work and finding and improving techniques for defeating/ weakening them 
@@ -281,11 +282,11 @@ Methods uses in cyptanalysis:
 
 # Access control
 
-
 ## Access Control Models
 
 - DAC: Discretionary access control
-	-
+	- In DAC, each system object (file or data object) has an owner, and each initial object owner is the subject that causes its creation. Thus, an object's access policy is determined by its owner.
+
 - MAC: Mandatory access control
 	- Restricts the ability individual resource owners have to grant or deny access to resource objects in a file system
 - RBAC: Role-based access control
@@ -379,6 +380,7 @@ Types
 - Fingerprint scanners - can even vein match (vascular biometrics)
 - Voice identification - say a sentence or a word to authenticate
 - Eye scanners - iris recognition, retina scanner - glasses can cause issues
+- Keystroke dynamics- track typing
 
 ## Certificate-based Authentication
 - Identify users, machines or devices using digital certificates
@@ -413,7 +415,7 @@ To associate and incoming request e.g HTTP
 
 1. Client sends login request w/ credentials to backend server
 2. Server validates credentials, if login successful web server creates a session in the database and include a set-cookie header on the response containing a unique ID in the cookie object
-3. Browser saves cookie locally, as long as the user stays logged in, cliend must send the cookie in all the requests to the server
+3. Browser saves cookie locally, as long as the user stays logged in, client must send the cookie in all the requests to the server
 	- server then compares session ID stored in the cookie against the one one in the database to verify validity
 4. During logout, server makes the cookie xpire by deleting it from the server
 
@@ -423,7 +425,7 @@ To associate and incoming request e.g HTTP
 - Cookies are small in size => efficient to store them on the client side
 - They can be HTTP-only => impossible to read on the client-side, improves protection against **Cross-site scripting** attakcs
 - Cookies are added to the request automatically => developer does not have to implement them manually (less code)
-- Client is given option to reject **non-essential cookies**, web authentication cookies cannot be rejected if you want access to site
+- Client is given option to reject **non-essential cookies**, essential web authentication cookies cannot be rejected if you want access to site
 
 ### Disadvantages of cookie-based authentication
 - Vulnerable to Cross-site request forgery attack
@@ -499,11 +501,11 @@ An authorised, simulated attack on a system to evaluate the security of the syst
 ## PenTesting results
 - Typically, pen tests are used to identify level of technical risk from software/hardware vulnerabilities
 - Setting limits will affect the results: what techniques are used, what targets are allowed, how much knowledge of the system is given to the testers beforehand and how much knowledge of the test is given to system admins can vary within the same test regime
--
+
 
 ## PenTesting expiry
-- Not common for a year or more to elapse between penetration tests
--
+- A year or more to elapse between penetration tests, but vulnerabilities can pop up anytime in that period
+- Not really a guaranteed expiry date (in reality it could be just a week)
 
 ## PenTesting startup point
 - External network penetration test: an external network penetration test is typically what most people think of when talking about pentesting
@@ -522,8 +524,7 @@ An authorised, simulated attack on a system to evaluate the security of the syst
 - Blind penetration testing -
 - Double blind penetration testing
 
-##
-PenTesting phases
+## PenTesting phases
 - Pre-engagement interactions
 - Reconnaissance: gather as much inteligence on the organization and the potential targets for exploit
 - Scanning:
@@ -534,9 +535,16 @@ PenTesting phases
 - Clean up and remediation
 
 
-## Advantages of pentesting
+## Advantages/Disadvantages of pentesting
 
-## Disadvantages of pentesting
+- **Adv**
+	- Identify/resolve system vulnerabilites
+		- Identify high-risk weaknesses that result from a combo or small vulnerabilities
+	- Gain insights into your systems - reports provide specific advice on how to protect the system
+- **Disadv**
+	- If done incorrectly, servers can crash, sensitive data can be exposed, cruicial data can be corrupted
+	- Must trust that the pentester won't abuse their role
+	- Test conditions must be realistic - employees might prepare for the test whereas a genuine attack could happen at any point in ways that might be creative/ hard to plan for
 
 
 ## Reconnaissance
@@ -621,5 +629,599 @@ dnsrecon -D subdomains-top1mil-5000.txt -d spartaglobal.com -t brt > dns_recon_s
 #### [OSINT Framework](osintframework.com)
 
 
+# Scanning
+
+Scanning is part of the reconnaissance phase in the Cyber Kill Chain
+- But many PenTesting categorisations put it in a separate phase
+- Scanning could be considered as footprinting
+
+- Consider it separate:
+	1. Consists of technical steps that require actions to be taken toward the target enterprise
+	2. Needs legal prep to make sure action plan is legal
+
+Scanning: set of procedures for identifying live hosts, ports, discovering OS and architecture of target system - identifying vulnerabilities and threats in the network.
 
 
+## Network Scanning
+
+Gathering information about a network to determine all active devices on it 
+- Passive scanning
+	- Silently analyse network traffic (packet sniffing) - identify endpoints and traffic patterns
+	- No risk of disturbing the network (no intercepting)
+	- e.g TCPDump, Wireshark
+	- Limitations: 
+		- Can't detect devices/applications that never communicate, they may still have vulnerabilities they will go unnoticed
+		- Infected systems intentionally distribute misinformation
+		
+	
+- Active scanning
+	- Sending test traffic into the network and querying individual endpoints
+	- Levels of active scanning
+		- Host scanning
+		- Port scanning
+	- OS fingerprinting
+
+## Host scanning
+
+- Detect all active hosts on a network and mapping them to their IP addresses
+
+- Address Resolution Protocol (ARP) scans:
+	- ARP requests can be sent out to many IP addresses on a Local Area Network (LAN) to determine which hosts are up based on the ones that respond with ARP reply
+- Internet Control Message Protocol (ICMP) scans:
+	- Echo (ping) requests are used to detect if another host can be reached
+	- Timestamp messages determine the latency between two hosts - the time it takes for data packets to be captured, transmitted, processed
+	- Address mask requests discover the subnet mask in use on the network
+
+## Port scanning 
+
+- Sending packets to specific ports on a host and analysing the responses to learn details about its running services or potential vulnerabilities.
+- Ports are classified as follows:
+	- Open: the destination responds
+	- Closed: destination received the request packet but responds with a reply that there is no service listening at the port
+	- Filtered: request packet is send but the host does not reply
+
+- Port scanning methodology
+	- Vanilla: scan all 65535 ports
+	- Strobe: scan only known services/ports
+	- Sweep: scan same ports on several machines
+
+- Intrusion Detection System can detect these scans
+	- Keep dely between port scans to prevent it looking suspicious and being flagged to admin, you can also send decoy traffic
+
+### TCP Handshake
+- 3-way handshake to establish a reliable connection between a client and server: both sides synchronize (SYN) and acknowledge eachother (ACK)
+1. SYN: client wants to establish connection with server => sends a segment with SYN (synchronise sequence number), informs server that client is likely to start communication 
+2. SYNACK: server responds to client request with SYN-ACK signal bits. ACK signifies the response of segment it received and SYN signifies with what sequence number it is likely to start the segments with
+3. ACK: client acknowledges the response of server and they both establish a reliable connection which they use to transfer data
+
+- SYN Scan
+	- Determine the state of a port without establishing a full connection
+- ACK Scan
+	- Determines whether a port is filtered or unfiltered
+- TCP Connect Scan
+	- Needs a full connection (SYN ACK) => more likely to log full TCP connection, trigger IDS
+- NULL (no flag in header), FIN (fin flag set to 1), Xmas Scan 
+	- Each results in a closed port, open or filtered port
+- IDLE Scan
+
+### UDP Scanning
+
+TCP has a connection between sender/reciever
+UCP does not have a coonection
+
+- Sends a UDP packet to various ports on target system and determine the availability of the host from the response
+- Receiving a UDP response = port is open, ICMP port unreachable = closed port, no response could indicate that the port is either open or filtered by a firewall/packet filter
+
+### OS Fingerprinting
+
+- Determining the operating system used by a host on a network
+	- IP TTL values: time to live in the IP header, the amount of time that a packet is set to exist inside a netwrok before being discarded by a router
+	- IP DF option: don't fragment, 
+	- IP Type of Service (TOS)  
+	- IP ID values (IPID sampling)
+	- TCP Window size
+	- TCP Options (TCP SYN and SYN+ACK packets - can have assigned values between OS)
+	- Initial sequence number (ISN) sampling
+	- DHCP requests
+	- ICMP requests
+	- HTTP packets
+	- Running services
+	- Open port paterns
+
+
+Operating System 	Time To Live 	TCP Window Size
+Linux (Kernel 2.4 and 2.6) 	64 	5840
+Google Linux 	64 	5720
+FreeBSD 	64 	65535
+Windows XP 	128 	65535
+Windows Vista and 7 (Server 2008) 	128 	8192
+iOS 12.4 (Cisco Routers) 	255 	4128
+
+
+## Hybrid scanning
+
+## Nmap
+- Open source utility for network discovery
+
+### e.g nmap commands
+
+- nmap -PR 172.25.0.0/16 ; ARP scan
+- nmap -p2000-3000 172.25.1.101 ; scan range of ports
+
+## Vulnerability scanning
+Identifying potential vulnerabilities in network devices e.g firewalls, routes, switches, servers and applications - once vulnerabilities are found, they can be exploited by the pentester.
+- Scan specified set of ports on a remote host
+- Tries to test the service offered at each port for its know vulnerabilities
+- Automated
+- Doesn't exploit the vulnerabilities
+- Scope is business wide
+
+### Vulnerability data-source
+- Common Vulnerabilities and Exposures (CVE)
+- Many public CVE sources
+	- (https://cve.mitre.org/)
+	- (https://nvd.nist.gov/vuln/search)
+	- (https://www.cvedetails.com/)
+	- (https://vuldb.com/)
+	- (https://vulners.com/)
+	- (https://owasp.org/www-pdf-archive/OWASP_Top_10-2017_%28en%29.pdf.pdf)
+
+### Vulnerability categories
+- Outdated software
+- Misconfigured software
+- Poorly developed apps
+	- website attacks
+	- mobile app attacks
+- Cloud applications
+- Data breach
+- Vulnerabilities in shares of \\server\share over the SMB protocol
+
+### Vulnerability scanner types
+- Network vulnerability scanner
+	-
+- Wireless scanner
+- Agent based scanners
+- Web application scanner
+- Database scanners
+
+### Vulnerability scanning scheduling strategy
+
+- Change based
+	- based of software, hardware updates
+- Hygeine based
+	- best practices that an organisation undertakes
+- Compliance based
+
+### Running your scans
+- Are you systems accessible to the scanner?
+	- Firewalls
+- Are any of your systems protected by an IPS/IDS or WAF?
+	- Intrusion prevention system, intrusion detection system, web application firewall
+- Do you need authentication?
+
+### Nessus
+
+
+### OpenVAS/GVM
+
+### Burp Suite
+
+### SQLMap
+- sqlmap an open source penetration testing tool
+- automates the process of detecting and exploiting SQL injection flaws and taking over of database servers
+
+
+## Exploitation
+
+### Exploitation catergories
+- Known exploit: known to system/software developers
+- Unknown exploits: no documentation 
+
+### Exploit naming
+Named by:
+- Type of vulnerability they exploit (BOF - buffer overflow)
+- Where they are local/remote exploits
+- The result of running the exploit e.g DoS/ spoofing
+### Exploit types
+- Null or default passwords
+	- Netwroking hardware can have default credentials
+	- Admins sometimes create privileged user accounts in a rush and leave the password null
+	- Wireless access points and preconfigured secure server appliances
+- Network exploits
+	- IP Spoofing - change I
+	- Man-in-the-middle
+	- Firewall Traversal
+	- ARP Poisoning
+	- WLAN
+- Eavesdropping
+	- Works mostly with plain text transmission protocols - HTTP
+	- Remote attacker needs access to a compromised system
+	- Prevent using cryptography
+- Service vulnerabilities
+	- HTTP-based services are vulnerable to remote command attack
+	- Services might have vulnerabilities e.g buffer overflow
+	- Web server exploits
+		- Session hijacking: compromises the session token by steal or predicting a valid session token to gain unauthorized access to the web server.
+			- Can be done through session sniffing, client-side attacks e.g malicious JavaScript attacks, man in the middle attack - alters communication between two parties who believe they are communicating with each other
+		- SQL injection: malicious SQL statements inserted into a user input field this can destroy a data base or reveal information in tables such as usernames and passwords. 
+			- SQL injection based on 1=1 is always true, entering 1234 OR 1=1 into a userid input equivalent to an SQL statement such as SELECT * FROM Users WHERE userid = 1234 or 1=1 revealing all rows in the table.
+			- Use DROP TABLE in input could delete a particular table
+			- Prevent by adding parameters to SQL queries, input validation,- pre-compiling an SQL statement so that you can then supply the parameters in order for the statement to be executed.
+			- Use character-escaping functions for user-supplied input provided by each database management system (DBMS). This is done to make sure the DBMS never confuses it with the SQL statement provided by the developer.
+		- Directory traversal: allows attacker to read arbitrary files on the sever that is running an app - e.g app code/data, credentials for back-end systems, sensitive OS files. Can possibly write to these files, modifying app data/behaviour and possibly take control of the server.
+		- Code injection: injecting code that is interpreted/executed by the app, lack of proper input/output data validation
+		- Cross site scripting: malicious scripts are injected into trusted websites, the attacker can inject trojans into the website, capture users login credentials.
+	- Prevent: admins should not runs services as the root user ()
+
+- Host based vulnerabilites
+	- Workstations and desktops are more prone to exploitation
+	- Safeguards can be implemented e.g email client software does not automatically open or execute attachments
+	- Automat
+- Denial of Service (DoS) attacks
+	- Ping flood attacks:
+	- Source packets usually forged
+	- IDS, IPS, IPDs
+
+### Exploit kits
+Tools embedded in compromised web pages
+- Automatically scan a visitor's machine for vulnerabilities and attamept to exploit them 
+- If exploit is successful, kit injects malware to the user's system
+
+
+e.g
+- Magnitude: attackers inject malicous code into adverts that redirects users to malicious websites, infects users with ransomeware (can encrypt files and delete file backups) with a focus on users in south korea also Taiwan and Hong Kong attackers behind it utilised CVE common vulnerabilities and exposures database as an exploit - modified and obscured it, also used elevation of privelege exploit
+
+- exploit as a service
+
+### Exploit databases
+- [Exploit DB](https:www.exploit-db.com)
+- [Rapid7](https://rapid7.con/db)
+- (https://cxsecurity.com/exploit/)
+- (https://www.vulnerability-lab.com/)
+
+e.g Microsoft CVE-2021-31183
+- Windows TCP/IP driver denial of service vulnerability - kernel driver
+
+- The vulnerability allows a remote attacker to perform a denial of service (DoS) attack.
+- The vulnerability exists due to insufficient validation of user-supplied input in the Windows TCP/IP Driver. A remote attacker can pass specially crafted input to the application and perform a denial of service (DoS) attack.
+
+# Threat modelling
+- Identifying what threats an organization, a target network or an in-scope application should be worried about.
+- For pentesting
+	- Modelling (mapping out)
+	- The threats (things that can attack/harm)
+	- To inform the types of activities conducted 
+	- And to inform the risk of the vulnerabilites discovered
+
+- After pentesting (organizations and blue teams)
+	- apply countermeasures and mitigating controls to addess the dangers
+- 3 questions to answers:
+	- Where am I most vulnerable to attack?
+	- What are the most relvant threats?
+	- What do I need to do to safeguard against these threats?
+
+## STRIDE, microsoft
+Used to help reason and find threats.
+Spoofing - Authentication| Impersonationg something or someone known and trusted
+Tampering - Integrity| Modifying data on disk, memory, network 
+Repudiation - Non-repudiation| Claim to not be responsible for an action
+Information Disclosure - Confidentiality| Providing information to someone who is not authorised
+Denial of Service - Availability| Denying or obstructing access to resources required to provide a service
+Elevation of Privilege - Authorization| Allowing access to someone without proper authorization
+
+## PASTA: Process for Attack Simulation and Threat Analysis
+
+PASTA gives an attacker-centric view of the system.
+Phases:
+1. Define objectives
+2. Define Technical scope
+3. Decomposition and analysis of application
+4. Threat analysis
+5. Vulnerabilities and weakness analysis
+6. Analyze modelling and simulation
+7. Risk and impact analysis 
+
+## DREAD, microsoft
+Focusses of determining the severity of a threat:
+- Damage: impact of an attack
+- Reproducibility: how easily can the attack be reproduced
+- Exploitability: how easy it is to launch the attack
+- Affected users: how many users will be impacted
+- Discoverability: how easily can the vulnerability be found
+
+# Digital Forensics Incident Response (DFIR)
+
+- IR: structure methodology for handling security incidents, breaches and cyber threats
+- Well-defined incident response plan (IRP) allows you to effectively identify, minimize the damage, and reduce the cost of a cyber attack, while finding and fixing the cause to prevent future attacks.
+
+## Incident categorisation
+- Malicious code: malware infection on the network, including ransomware
+- Denial of Service: typically a flood of traffic taking down a website, can apply to phone lines, web-facing systems
+- Phishing: emails attempting to convince someone to click on a link/atttachment
+- Unauthorised access: access to systems, accounts, data by an aunauthorised person - e.g access to someone's emails/ account
+- Insider: malicious/ accidental action by an employee causing a security incident
+- Data breach: lost/stolen devices or hard copy documents, unauthorised access or extraction of data from the network
+- Target attack: attack specificaly targeted at the business- usually by a sophisticated attacker (often encompasses the above categories)
+
+## Severity matrix
+
+- Critical:
+	- Over 80% of staff/several critical staff/teams unable to work
+	- Critical systems offline without a known resolution
+	- High risk to/ definite breach of sensitive client or personal data
+	- High financial impact
+	- Severe reputational damage - likely to impact business long term
+- High:
+	- 50% of staff unable to work
+	- Risk of breach of personal/sensitive data
+	- Non-critical systems affected, or critical systems affected with known (quick) resolution
+	- Financial impact
+	- Potential serious reputational damage
+- Medium
+	- 20% of staff unable to work
+	- Possible breach of small amounts of non-sensitive data
+- Low
+	- Minimal impact
+	- One or two sensitive non-crital machines affected, <10% of non critical staff affected temporarily
+
+### IR steps
+1. Preparation
+	- Has everyone been trained on secuity policies?
+	- Have your security policies and indiced response plan been approved by management?
+	- Does the IR team know their roles and the required notifications to make?
+	- Have all incident response team members participate in mock drills?
+2. Identification
+	- When did the event happen?
+	- How was it discovered?
+	- Who discovered it?
+	- Have any other area been impacted?
+	- What is the scope of the compromise?
+	- Does it affect operations?
+	- Has the source (point of entry) of the event been discovered?
+3. Containment
+	- What has been done to contain the breach short term
+	- What's been done to contain the breach long term
+	- Has any discovered malware been quarantined from the rest of the enviroment? - Unplug devices, isolate infected section of network
+	- What backups are in place?
+	- Does remote access require true multifactor authentication
+	- Have all access credentials been reviewed for legitimacy?
+	
+4. Eradication
+	- Have artifacts/malware from the attacker been securely removed?
+	- Has the system been harderened, patched and updates applied?
+	- Can the system be re-imaged? - before infected version
+
+5. Recovery
+	- When can systems be returned to production?
+	- Have systems been patched, hardened and tested?
+	- Can the system be restored from a trusted back-up
+	- How long will the affected systems be monitored and what will you look for when monitoring
+	- What tools will ensure similar attacks will not reoccur? (File integrity monitoring)
+6. Post-incident activity
+	- What changes need to be made to the security?
+	- How should employee be trained differently?
+	- What weakness did the breach exploit?
+	- How will your 
+- Emergency contact/commincations list
+- At least one conference number
+- Escalation criteria
+- System backup and recovery process list
+- Forensic analysis list
+- Jumpbag list
+- Security policy review list
+
+### Playbook
+
+## Digital Forensics
+### Computer Forensics
+Analysing and collecting info for:
+- Computer systems
+- Embedded systems
+- Static memory e.g USB pen drives
+- Includes reporting the results
+
+### Mobile Device Forensics
+- Mobile device forensics collect data from mobile devices
+- Mobile devices are diffrent from computers as they have inbuild communication systems such as GSM
+- Data retrieved from movile devices includes
+
+### Network Forensics
+- Involves capturing and analysisng network traffic and network packets over local and wide area networks (or internet)
+- The analysis also covers intrusion detection
+- Network data are often considered as a proactive investigation element, uses 2 systems to collect data:
+	- Catch it as you can
+	- Stop look and listen
+
+### Database Forensics
+- Study of databases and its metadata
+- Analyses:
+	- database content
+	- log files
+	- in-RAM data to recover pieces of digital evidence or to buld a timeline
+
+### Forensic Data Analysis
+- Covers the investigation of financial crimes associated with structured data - data from application systems or their databases
+- Primary motive of 
+
+### Email Forensics
+- Email header analysis
+- Email server analysis
+- Investigation of network devices
+- Sender mailer fingerprints
+- Software embedded indentifiers
+- Bait tactics
+
+### Cloud forensisc
+- The application of digital forensics in cloud computing as a subset of network forensics to gather and preserve evidence in a way that is suitable for presnetation in a court of law
+- Cloud forensic is the amalgamation of all different forensics
+- Involves interactions amongst various cloud actors
+	- Cloud providers
+	- Cloud
+
+### Digital Forensic Phases
+1. Phase I - first response: what is done after security incident takes place, dependent on nature of attack
+2. Phase II- search and seizure
+3. Phase III - collect the evidence
+4. Phase IV - secure the evidence
+5. Phase V - data acquisition
+6. Phase VI - data analysis
+
+## OWASP Top 10 security risks
+
+xml external entities - markup language for encoding documents in a readable format
+
+Attackers can exploit XML proceesors if they can upload XML or include hostile content in an XML document
+to exploit vulnerable code, dependencies and integrations - these vulnerabilities can be used to extract data, 
+execute remote requests from the server, scan internal systems, perform a DOS attack
+
+Apps and XML-based web servies can be vulnerable to attack if:
+The app accepts XML directly or XML uploads from untrusted sources or inserts untrusted data into XML - similar to json docs
+which will be passed to the XML processor
+To prevent this from happening: 
+use less complex data formats e.g JSON and avoid serialization of sensitive data
+Upgrade all XML processors and libraries in use by the application or on the OS
+Disable XML external entity and document type definitions processing
+
+exploitability 2, prevealence 2, detectibility 3, technical 3
+average, common, average, easy, severe
+
+Example Attack Scenarios
+Numerous public XXE issues have been discovered, including attacking embedded devices. XXE occurs in a lot of unexpected places, including deeply nested dependencies. The easiest way is to upload a malicious XML file, if accepted:
+Scenario #1: The attacker attempts to extract data from the server:
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+    <!DOCTYPE foo [
+    <!ELEMENT foo ANY >
+    <!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+    <foo>&xxe;</foo>
+Scenario #2: An attacker probes the server's private network by changing the above ENTITY line to:
+   <!ENTITY xxe SYSTEM "https://192.168.1.1/private" >]>
+Scenario #3: An attacker attempts a denial-of-service attack by including a potentially endless file:
+   <!ENTITY xxe SYSTEM "file:///dev/random" >]>
+
+<!DOCTYPE test [<!ENTITY list SYSTEM "file:/">]>
+cross site scripting
+allows attakers to inject client-side scripts into web pages viewed by other users
+- automated tools can detect this vulnerability and exploit XSS
+- this can be used to perform remote code execution on the victim's browser e.g stealing credentials, or delivering malware to them
+- 3 forms of XSS that target user's browers
+reflected xss - the app includes unvalidated and unescaped user input as part of HTML output
+- if successful the attacker can execture arbitrary HTML and JavaScrips in the victims browser - the user 
+usually must click on a malicious link that is an attacker-controlled page e.g malvertisment
+- Stored xss: app/api stores unsanitised user input that is viewed later by another user/admin - attacker might
+enter malicious script into a user input field, when the infected page is opened by the victim - the XSS attack
+payload is served as part of their HTML code and results in the victim executing the malicious script
+once the page is viewed
+- DOM xss Javascript frameworks and APIs that dynamically include attacker-controllable data to a page are
+vulnerable to DOM xxs
+if the web app's client side scripts write data provided by the user to the Document object model(dom)
+data is read from the DOM by the web app and outputted to the browser
+when data is incorrectly handled, and inject a payload
+to prevent use frameworks that automatically escape XSS by design e.g the latest React JS
+, escape untrusted HTTP request data based on the context in the HTML output (body, JavaScript, the URL
+
+exploitability: 3, prevalence 3, detectability 3, technical 2
+easy, widespread, easy, moderate
+
+e.g in input forms:
+- <script>alert(123)</script>
+- ><script>alert(document.cookie)</script>
+
+
+OWASP Juice shop insecure web application that contains hacking challenges where the user exploits the vulnerabilities.
+
+# Cyber Threat Intelligence & MITRE ATT&CK
+
+## MITRE ATT&CK: global.y-accessible knowledge base of advesary tactics and techniques based on real-world observations of cybersecurity threats
+- Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
+- Knowledge base of adversary behaviour
+- Free, open and globally accessible
+- Based on real-world observation
+- Focus on: Tactics, Techniques & Procedures
+- Use Knowledge of adversary to help defenders
+- Shift from indicators to behaviours
+- Use a common knowledge
+pyramid of pain img
+
+### Mapping ATT&CK to CTI
+1. Understand ATT&CK
+2. Map data to ATT&CK
+3. Store and analyse
+4. Defence recommendation
+
+### Mapping to ATT&CK
+1. Find behaviour
+	- Check what adversary/software does
+	- Analyse initial compromise and post-compromise
+	- e.g running a command (ifconfig), creating a foothold/task, establishing a connection, sending data
+2. Research behaviour
+	- Consult other teams (red team, blue tea)
+	- Search on the internet
+	- Academic and secuirty-focus journal and reports
+	- Time-consuming task but builds the knowledge
+	- e.g protocol used, port used, command used
+3. Map behaviour to a tactic on MITRE ATT&CK
+	- What is adhersary trying to accomplish?
+	
+4. Find technique
+	- Technique is a special behaviour to achieve a goal and often a single step
+	- Toughest part
+	- Behaviour might not be a technique
+	- Search MITRE ATT&CK (keywords, commands, etc)
+5. Compare results
+	- Different interpretation for analysing same situation/ case - normal as analysts have bias (based on their knowledge and expertise)
+	- Discuss results
+
+- Work from finished report or raw data
+
+### Mapping to ATT&CK from raw data
+- More data available at procedure level
+- Working on case from scratch (without someone else's bias)
+- Needs great technical knowledge
+
+1. Find behaviour
+- Similar to find behaviour step in mapping
+- Behaviour found by analysing data
+
+2. Research the Behaviour
+- May require expertise in specific domain e.g:
+	- Digital forensics - analyse without corrupting evidence
+	- Specific OS
+	- Specific network devices
+	- Specific data types: jpeg, mp3
+
+- May require multiple data sources or context
+- May require consulting/interviewing other team members
+- Researching similar cases
+
+3. Translate behaviour into a tactic
+
+
+4. Find the technique
+- Think about concurrent techniques (pairs):
+	- Data compression (exfiltration) + data encryption (exfiltration)
+	- Spearphishing attachment (initial access) + user execution(execution)
+	- Data from local system (collection) + email collection (collection)
+	- Process delivery (discovery) + command line
+
+5. Compare the results
+- Need several analyst with different sets of expertise
+- Different interpretation for analysing same situation/case
+- Discuss results
+
+### Mapping from report vs raw data
+TABLE
+Step Report/Finished Raw
+Find the behaviour
+Research the behaviour
+Behaviour -> Tactic
+Find technique
+Compare the results
+## Recommendations
+1. Determine Priority techniques
+2. Research how techniques are being used 
+3. Research defensive options related to techniques
+4. Research organisational capability/constraints
+5. Determine what tradeoff are for the organisation on specific points
+6. Make recommendations
+
+https://mitre-attack.github.io/attack-navigator/

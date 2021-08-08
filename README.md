@@ -8,3 +8,5 @@
 - [Cybersecurity](https://github.com/jaydeegbobeh/eng88-cybercourse/tree/main/Cybersecuirty)
 
 ![alt text](https://raw.githubusercontent.com/jaydeegbobeh/eng88-cybercourse/main/Cybersecurity%20mindmap.png)
+
+**Course mindmap**

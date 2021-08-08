@@ -66,7 +66,7 @@ Directly connected nodes are used to perform node-to-node data transfer where da
 - Data link layer encompasses two sub-layers, Media Access Control (MAC), provides flow control and multiplexing for device transmissions over a network.
 - Logical Link Control (LLC) provides flow and error control over the physical medium.
 **Network Layer**
-Responsile for receiving frames from the data link layer and delivering them to their intended destinations based on the addresses contained inside the frame.
+Responsible for receiving frames from the data link layer and delivering them to their intended destinations based on the addresses contained inside the frame.
 - Network layer finds the destination by using logical addresses such as IP (internet protocol).
 - Routers are crucial component used to quite literally route information where it needs to go between networks
 **Transport Layer**
@@ -342,7 +342,7 @@ DMZ - a perimeter network that protects the internal local-area network from unt
 ## Virtual Private Networks (VPN)
 
 VPN aims to secure network traffic between sites and users.
-- Users and organisations use VPNs to create end-toend private network connections
+- Users and organisations use VPNs to create end-to-end private network connections
 - A vpn is virtual in that it carries info within a private network but that info is actually transported over a public network
 - The traffic is encrypted to keep the data confidential while it is transported
 
@@ -353,7 +353,7 @@ VPN aims to secure network traffic between sites and users.
 - A set of communication rules that govern the secure implementation of VPNs which allow organisations a method of extending their own private networks over the public Internet via "tunnels"
 
 **Generic Route Encapsulation (GRE)**
-- A tunneling protocol that can enca[sulate a wide variety of network layer protocols inside virtual point-to-point links over an IP network
+- A tunneling protocol that can encapsulate a wide variety of network layer protocols inside virtual point-to-point links over an IP network
 
 **Layer 2 Tunneling Protocol (L2PT)**
 - A tunneling protocol used to support VPNs. L2PT uses encryption only for its own control messages and does not provide any encryption or confidentiality of content by itself.

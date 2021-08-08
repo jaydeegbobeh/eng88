@@ -11,6 +11,6 @@ Security group acts as a virtual firewall for EC2 instances, controls incoming/ 
 - ssh into ec2 instance in shell
 - Install docker on ec2 instance
 - Run docker image in instance, access from port 80
-	- docker run -p 80:5000 jaydeegb23/web-calculator:3
+	- docker run -p 80:5000 /web-calculator:3
 
 

@@ -65,6 +65,7 @@ Docker images become contaiers when they run on Docker engine.
 
 ### Disadvantages of containerisation
 - Security: as the container shares resources, malware can escape from the container to the host.
+- Can hacking apps gain access to the container?
 
 ### Docker commands
 e.g in Linux terminal
