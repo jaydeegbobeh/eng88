@@ -62,33 +62,48 @@ Group of interelated protocols
 **Physical Layer**
 Lowest layer of the OSI model, electrically transmits raw unstructured data bits across the network from the physical layer of the sending device to the physical layer of the receiving device e.g voltages, pin layout, cabling.
 **Data Link Layer**
-Directly connected nodes are used to perform node-to-node data transfer where data is packaged into frames. Data link layer also corrects errors that may have occurred at the physical layer.
-- Data link layer encompasses two sub-layers, Media Access Control (MAC), provides flow control and multiplexing for device transmissions over a network.
+- The data link layer handles such tasks as gathering up sets of bits for transmission as packets and making sure the packets get from one end to the other. In addition, recognizing that physical layer transmission sometimes introduces errors, the data link layer handles error detection (and sometimes correction).
+- The MAC layer routes packets from a sender to a receiver along a common path. It makes sure the message arrives at the intended recipient. The MAC layer adds a physical address, defining the intended recipient machine, and controls shared access to a resource.
+- It handles problems that occur as a result of bit transmission errors.
+- It ensures data flows at a pace that doesn't overwhelm sending and receiving devices.
+- It permits the transmission of data to Layer 3, the network layer, where it is addressed and routed.
 - Logical Link Control (LLC) provides flow and error control over the physical medium.
 **Network Layer**
-Responsible for receiving frames from the data link layer and delivering them to their intended destinations based on the addresses contained inside the frame.
+Responsible for receiving frames from the data link layer and delivering them to their intended destinations based on the addresses contained inside the frame (the protocol data unit at the data link layer)
 - Network layer finds the destination by using logical addresses such as IP (internet protocol).
 - Routers are crucial component used to quite literally route information where it needs to go between networks
 **Transport Layer**
-Transport layer manages the delivery and error checking of data packets.
-- TCP: Transmission Control Protocol
-- UDP: User Datagram Protocol
+Transport layer manages the delivery and error checking of data packets 
+- It's the layer at which TCP/IP ports listen e.g the standard port which HTTP listens on is TCP Port 80
+- TCP: Transmission Control Protocol, TCP is a transport level protocol of the Internet that provides reliable, end-to-end communication between two processes. The requesting process, often known as the client, requests services from the server process.
+- UDP: User Datagram Protocol, a communications protocol that facilitates the exchange of messages between computing devices in a network
 **Session Layer**
-Controls conversation between different computers.
+- Controls conversation between different computers.
+- It establishes, manages, and terminates the connections between end-user application processes
 **Presentation Layer**
 Formats or translates data for the application layer based on the syntax that the application accepts.
+- Audio,
 **Application Layer**
 The end user and the application layer interact directly with the software application (top layer).
 
 
 In TCP/IP session, presentation, application are considered as application.
-Application layer
-Transport layer
-Internet layer
-Network access layer
+Application layer - presentation, application are considered as application
+Transport layer - transport layer
+Internet layer - network layer
+Network access layer - physical, data link
 
-Layers work together by encapsulation - when data moves from upper layer to lower layer of TCP/IP protocol stack, during an outgoing transmission, each layer includes a bundle of relevant information called "header" along with the actual data.
-Decapsulation - each layer takes out info from previous layer.
+Node: modems, switches, hubs, bridges, servers, and printers are also nodes, as are other devices that connect over Wi-Fi or Ethernet.
+
+- Whenever we send the data from one node to another in a computer network.
+- The data is encapsulated at the sender's side, while it is de-encapsulated at the receiver's end. 
+- Actually, the encapsulation of data at various layers of the implementing model(OSI or TCP/IP) adds various functionalities and features to the data transmission
+    
+Data Encapsulation is the process in which some extra information is added to the data item to add some features to it. We use either the OSI or the TCP/IP model in our network, and the data transmission takes place through various layers in these models. Data encapsulation adds the protocol information to the data so that data transmission can take place in a proper way. This information can either be added in the header or the footer of the data.
+The data is encapsulated on the sender’s side, starting from the application layer to the physical layer. Each layer takes the encapsulated data from the previous layer and adds some more information to encapsulate it and some more functionalities with the data. These functionalities may include proper data sequencing, error detection and control, flow control, congestion control, routing information, etc.
+
+Data De-encapsulation is the reverse process of data encapsulation. The encapsulated information is removed from the received data to obtain the original data. This process takes place at the receiver’s end. The data is de-encapsulated at the same layer at the receiver’s end to the encapsulated layer at the sender’s end. The added header and trailer information are removed from the data in this process.
+
 
 ## Port number
 Communication end point.
@@ -244,6 +259,8 @@ Network ID: 192.128.2.1
 - all hosts bits of the IP address are 1's
 - All host in a network should have the same Broadcast IP
 - Use the broadcast IP to send specific data to all the machines on the same network
+- The sender does not need to indicate recipient addresses – this is how the broadcast process differs from unicast, where only a single known recipient is addressed.
+- Broadcast ip replaces the recipient addresses in question. 
 
 **Localhost- 127.0.0.1**
 The standard IP address used for a loopback network connection - looped back to your own machine (this computer)
@@ -269,7 +286,7 @@ Address resolution protocol - maps an IP address to a permanent physical machine
 Reverse address resolution protocol
 ARP and RARP translate between IP addresses and MAC layer addresses
 - They are broadcast protocols
-All hosts on a network are located by their IP address, but NICs (layer 2) do not have IP addresses, they have MAC addresses. ARP associated the IP address to a MAC address.
+All hosts on a network are located by their IP address, but NICs (layer 2) do not have IP addresses, they have MAC addresses. ARP associates the IP address to a MAC address.
 
 **Default Gateway**
 
@@ -296,6 +313,7 @@ HTTP runs over TCP
 TCP port 80
 HTTPS (secure)
 TCP port 443
+- HTTPS makes a secure connection by establishing an encrypted link between the browser and the server or any two systems
 
 **FTP**
 File Transfer Protocol - application layer protocol used for the transfer of computer files from a server to a client on a computer network.
@@ -305,6 +323,7 @@ TCP port 20 - used to transfer data
 **DNS**
 Domain Name System - converts host names/ domain names into IP addresses, browsers uses these IPs to load internet pages.
 DNS is an application layer protocol that uses the transport layer protocol . Uses TCP for zone transfer and UDP for name.
+- DNS amplification is a Distributed Denial of Service (DDoS) attack in which the attacker exploits vulnerabilities in domain name system (DNS) servers to turn initially small queries into much larger payloads, which are used to bring down the victim's servers.
 
 ## Firewalls
 A network security system that monitors/ controls incoming and outgoing network traffic (between networks) - firewalls can be a device or a software.
@@ -338,16 +357,17 @@ Private(inside)
 Public(untrusted)
 DMZ - a perimeter network that protects the internal local-area network from untrusted traffic.
 - Allows you to access untrusted networks like the internet, whilst ensuring its private network remains secure.
+- A common DMZ meaning is a subnetwork that sits between the public internet and private networks. It exposes external-facing services to untrusted networks and adds an extra layer of security to protect the sensitive data stored on internal networks, using firewalls to filter traffic.
+- Using the DMZ subnet instead. Since it's an independent subnet, the DMZ host and other LAN subnet are isolated. Therefore, if an attacker breaks into a host on the DMZ subnet, he or she cannot access the other LAN subnets.
 
 ## Virtual Private Networks (VPN)
 
 VPN aims to secure network traffic between sites and users.
 - Users and organisations use VPNs to create end-to-end private network connections
-- A vpn is virtual in that it carries info within a private network but that info is actually transported over a public network
-- The traffic is encrypted to keep the data confidential while it is transported
+- A VPN is virtual in that it carries info within a private network but that info is actually transported over a public network
+- VPN is private in that the traffic is encrypted to keep the data confidential while it is transported to keep the data confidential while it is transported across the public network
 
 ### VPN Protocols
-
 
 **Point-to-Point Tunneling Protocol (PPTP)**
 - A set of communication rules that govern the secure implementation of VPNs which allow organisations a method of extending their own private networks over the public Internet via "tunnels"
@@ -361,9 +381,15 @@ VPN aims to secure network traffic between sites and users.
 **IP Security (IPSec)**
 - A secure network protocol suite, authenticates and encrypts the packets of data to provide secure encrypted communication between two computes over an IP network.
 
-
 **Secure Socket Layer (SSL)**
 - An ecryption-based internet security protocol.
+- 
+
+**Transport Layer Security (TLS)**
+- Transport Layer Security, or TLS, is a widely adopted security protocol designed to facilitate privacy and data security for communications over the Internet. A primary use case of TLS is encrypting the communication between web applications and servers, such as web browsers loading a website.
+
+**OpenVPN**
+An open source tool that can be used to create VPN connection
 
 ### Host-to-Host VPN
 Connects one desktop to another host. This connection uses the network to which each host is connected to create a secure tunnel between the two.
@@ -372,7 +398,6 @@ Intercepter - router can only see scrambled data with VPN tunnel
 
 ### Host-to-Site VPN
 VPN client software is on host itself
-
 vpn server: vpn gateway(vpn concentrator)router/ firewall
 Connection is from host to entire network => host can access all of network resources e.g webserver
 
@@ -397,17 +422,24 @@ Assigned by network provider then depends on region (country, even sometimes wha
 NAT keeps a table containing details of the connections
 Inside Local IP, Inside Global IP, Outside Global IP
 
+- NAT protects private IP
+- Flexibility, whenever there's a problem with one IP address, the router can switch 
 ### Types of NAT
 
 Static NAT: uses a one-to one mapping of local and global addresses. 
 - Useful when a network device inside a private network needs to be accessible from internet
 - If you don't give access to NAT to everbody, you can hide internal network
 - Inside local addresss always takes a specific inside global address (addresses reachable via NAT Router)
+- For example, you may have a web server with the inside IP address 192.168.0.10 and you want it to be accessible when a remote host makes a request to 209.165.200.10. For  this to work, you must do a static NAT mapping between those to IPs.
+- Static NAT is useful for Servers inside your network
+- e.g give private ip to server on router/firewall do NAT to give server a public address (when you need it to be fixed)
 
 Dynamic NAT: mapping of a private IP address to a public IP address from a group of public addresses called a NAT pool.
 - Establishes a one-to-one mapping between a private IP address to a public IP address - takes first available public address
 - Here public IP address is taken from the pool of IP addresses configured on the end NAT router.
-- Cannot translate 2 ip addresses to a public address.
+- Cannot translate 2 ip addresses to 1 public address.
+(still map 1-to-1, e.g there's 8 IPs available but 10 employees, 8 employees at same time can browse internet => limited
+- less used because it doesn't really solve a problem like static and PAT
 
 Port Address Translation NAT: can map multiple private IP addresses to a single public IP address by using a technology known as PAT
 - When a client from inside the network communicates to a host in the internet, the router changes the source port (TCP/ UDP) number with another port number.

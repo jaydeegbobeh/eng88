@@ -34,7 +34,7 @@ vagrant ssh
 
 ### Vagrantfile
 
-The function of the Vagrantfile: describes the machine required for a project, and how to configure the machines. Vagrant runs with one Vagranfile per project.
+The function of the Vagrantfile: describes the machine required for a project, and how to configure the machines. Vagrant runs with one Vagrantfile per project.
 
 ## Docker
 
@@ -66,6 +66,9 @@ Docker images become contaiers when they run on Docker engine.
 ### Disadvantages of containerisation
 - Security: as the container shares resources, malware can escape from the container to the host.
 - Can hacking apps gain access to the container?
+
+ Set Filesystem and Volumes to Read-only
+A simple and effective security trick is to run containers with a read-only filesystem. This can prevent malicious activity such as deploying malware on the container or modifying configuration.
 
 ### Docker commands
 e.g in Linux terminal

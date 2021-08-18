@@ -406,7 +406,7 @@ Types
 
 # Web App Authentication
 
-To associate and incoming request e.g HTTP
+To associate an incoming request e.g HTTP
 
 ## Cookie-based authentication
 - A small piece of data created by a server and sent to your browser when visiting a website
@@ -433,8 +433,9 @@ To associate and incoming request e.g HTTP
 - Client must send cookie on every request, even w/ URLs that don't need authentication for access
 
 ## Token-based authentication
+- Tokens offer a second layer of security, and administrators have detailed control over each action and transaction.
 - Used to store the user's state on the client machine
-- The JSON Web Token (JWT) is an open standard that defines a way of securly transmitting info between a cliend and a server as a JSON object
+- The JSON Web Token (JWT) is an open standard that defines a way of securly transmitting info between a client and a server as a JSON object
 - Anatomy of JWT token: 3 parts searated by dots
 - Stateless, self contained object
 

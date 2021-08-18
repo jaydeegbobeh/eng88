@@ -11,8 +11,7 @@ Column - database tables are composed of individual columns corresponding to the
 Row - a row consists of one set of attributes corresponding to an instance that a table describes. AKA Records or Tuples
 Table - a table is a predefined format of rows and columns that define an entity. AKA file.
 - There could be many tables in a database 
-DBMS - A DataBase Management System allows a computer to perform database functions of storin, retrieving, adding, deleting and modifying data.
-
+DBMS - A DataBase Management System allows a computer to perform database functions of storing, retrieving, adding, deleting and modifying data.
 
 ## Types of Database
 Flat-file Database
@@ -124,8 +123,7 @@ Possible interview question: "What is SQL and what are the different types of SQ
 
 From zsh shell
 
-docker exec -it mysql_dbms mysql -u root -p 
-SHOW DATABASES;
+docker exec -it mysql_dbms mysql -u root -p dSHOW DATABASES;
 - Shows all of your databases 
 
 USE password_db

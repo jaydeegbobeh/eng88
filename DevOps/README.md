@@ -1,20 +1,22 @@
 # Devops
 ## IT before DevOps
 - Software Develpoment Team
-- Wall Team - space inbetween representing confussion misalignment and stress
+- Wall Team - space inbetween representing confusion misalignment and stress
 - Quality Assurance Team
 - System Engineering Team
 
 ## Application Design Patterns
 - Monolith 
 Traditional unified model for the design of a software program, software is composed all in one piece.
-- Front and back end
+- N-tier (Front and back end)
 Separates the concerns between the visual elements of the app that the user will interact with (front end) and the building of the structure of the app (back end).
+	- Front end - in which the user will see and deal with.
+	- Back end – you have the software that will serve on the server and the database. This is where the DevOps team are.
 - Microservice
 Consists of a collection of small, autonomous service, each service is self-contained.
 - Advantages	
-	- Microservices are deploy independently => easy to manage bus fixes and feature releases
-	- Compared to monolithic application, code dependencies can become tangled adding a new feature requires editing code in many places, in a microservice you dont share code or data stores minimising dependencies making it much easier to add new features.
+	- Microservices are deployed independently => easy to manage bug fixes and feature releases
+	- Compared to monolithic application, code dependencies can become tangled adding a new feature requires editing code in many places, in a microservice you don't share code or data stores, minimising dependencies making it much easier to add new features.
 	- You can use different technologies that fit your microservice
 	- If a microservice becomes unavailable this does not distrupt the entire app
 	- Microservices can be scaled independently from each other
@@ -89,7 +91,16 @@ Continuous deployment - automating the deployment of applications to selected in
 - doing so in short cycles
 - Code done -> unit tests -> integrate -> acceptance test -> deploy to production (each step is automated)
 
+- Jenkins is a CI/CD server, facilitates CI/CD by can building, testing and deploying software.
+- You can set up Jenkins to watch for any code changes in places e.g GitHub and automatically do a build.
+- You can utilize container technology such as Docker, initiate tests and then take actions like rolling back/forward in production.
 	
+- Terraform CI,  a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions
+
+- Docker
+- Run unit tests as part of your docker build command by adding a target for them in your Dockerfile. This way, as you are making changes and rebuilding locally, you can run the same unit tests you would run in the CI on your local machine using a simple command.
+- Once you build docker image, you deploy it e.g Amazon EC2 container supports Docker images  
+
 CI/CD Pipeline
 CI
 - Build 
