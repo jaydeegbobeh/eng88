@@ -54,21 +54,21 @@ e.g for a class test each student's test score is a piece of data, the average s
 - Risk: intersection of asssets, threats and vulnerabilities - evaluate the existence of a vulnerability of an asset and determine the severity/chance of a potential threat.
 
 ## Causes of Vulnerabilities
-1. Development/ design errors
-2. Poor system configuration - not configuring
+1. Development - mistake in development process/ design errors- flaw in hard/software that can't be fixed
+2. Poor system configuration - not configuring encryption/cryptography/ password in the system.
 3. Human errors - someone leaves a document unattended/ not disposing of it properly, sharing passwords
-4. Connectivity - accesible via a public wifi
-5. Complexity 
+4. Connectivity - connecting to an insecure network e.g a public wifi
+5. Complexity - more features in a system = more attacj syrfaces to cover, greater chance of attack
 6. Passwords - should be strong, don't share it, changed frequently, different passwords for different systems (don't use the same)
 7. User input - hackers can feed malicious input into a web app that is processed without any blocks
-8. Management
-9. Lack of training staff
+8. Management - lack of management, policies not enforces
+9. Lack of training staff - keep employees up to date
 10. Communication
 
 ## Cyber attacks
 1. Un-targeted cyber attacks
 2. Targeted cyber attacks
-	- In 2020 hackers inserted malicious code into the SolarWinds system, there was a backdoor that the hackers could access and impoersonate users and accounts of organizations, this malware could access system files and blend in with legitimate activity without detection (even by antivirus software!)
+	- In 2020 hackers inserted malicious code into the SolarWinds system, there was a backdoor that the hackers could access and impersonate users and accounts of organizations, this malware could access system files and blend in with legitimate activity without detection (even by antivirus software!)
 
 ## Cyber threat actors
 1. Nation-states: geopolital motivation
@@ -112,7 +112,7 @@ e.g for a class test each student's test score is a piece of data, the average s
 - Installation(malware installs an access point for intruder- a backdoor)
 - Command and control(malware gives intruder access in the network/system)
 - Actions on objective(once attacker gains persistent access, they fufill their purpose e.g encryption for ransom);
-
+- Once complete cover your tracks and retrieve
 
 # Cryptology
 
@@ -128,7 +128,7 @@ e.g for a class test each student's test score is a piece of data, the average s
 Cipher- an algorithm for performing encryption/decryption that consists of a series of well-defined steps that can be followed as a procedure.
 
 - Substitution cipher
-	- ADD STUFF HERE   units of plaintext are replaced with the ciphertext
+	- units of plaintext are replaced with the ciphertext
 - Transposition cipher
 	- No letters are replaced; simply rearranged
 	- Key for transposition cipher (e.g rail fence cypher key=3 encrypt by text in 3 diagonal rows)
@@ -140,23 +140,24 @@ Cipher- an algorithm for performing encryption/decryption that consists of a ser
 Two classes of encryption used to provide data confidentiality- differ in how they use keys
 1. Symmetric encryption algoriths: encryption algorithms that use the same key to encrypt and decrypt data
 	- Used in: payment applications, validations to confirm that the send of a message is who they claim to be
-	- **Block cipher**: encryption is completed in 64 bit blocks, 
+	- **Block cipher**: encryption is completed in 64 bit blocks, bit is the most basic unit of info 
 	- **Stream cipher**: encryption is one bit at a time
 	- example: Advanced Encryption Standard, key size: 128, 192, 256
-	- Symmetric encryption is commonly used as it uses less resources (less bits), it also has the advantage of speed (useful for online banking)
-	- Initialisation vector
+	- Symmetric encryption is commonly used as it uses less resources (less bits), it also has the advantage of speed
+	- Initialisation vector: arbitrary number that can be used along with a secret key for data encryption
+		- Prevents repition in data encryption, making it more difficult for a hacker usig a dictionary attack to find patterns and break a cipher
 
 2. Asymmetric encryption algoriths: use different keys to encrypt and decrypt data
-	- Use public key (encryption) and private key (decryption)
+	- Use public key and private key
 	- Less than 1024 bits is not recommended
 	- Alogrithms e.g Diffie-Hellman 512,1024, 2048, 3072, 4096 key length, Digital Signature Standard 512-1024 key length
 - Asymmetric Encryption for confidentiality
 	- public key (encrypt) + private key(decrypt) = confidentiality
 - Asymmetric Encryption for authentication
 	- private key (encrypt) + public key(decrypt) = authentication - ensure message is coming from someone with the correct private key, integrity of message - it has not been changed
+- When connecting to a website on the public internet it becomes more complicated and symmetric encryption, by itself, won’t work because you don’t control the other end of the connection. So asymmetric prevents man in the middle attacks so reducing the risk of someone on the internet incercepting in the middle.
 
-
-### Diffie-Hellman
+### Diffie-Hellman - used for key exchange not for encryption/decryption
 - An asymmetric mathematical algorithm
 - Allows two computers to generate an identical shared secret w/out having communicated before
 - New shared key is never actually exchanged between the sender and receiver
@@ -164,7 +165,7 @@ Two classes of encryption used to provide data confidentiality- differ in how th
 	- Data exchanged using an IPsec VPN
 	- Data is encrypted on the internet using SSL/TLS
 	- SSH data is exchanged
-
+- Securely exchanging keys over a public channel.
 ## RSA algorithm
 
 Algorithm for public-key cryptography, works on basic of a public and private key. Public key used to encrypt data before it's sent to the server on which the certificate is located.
@@ -185,24 +186,34 @@ Algorithm for public-key cryptography, works on basic of a public and private ke
 
 An algorithm that takes an arbitray amount of data input (credential) and produces a fixed-sized output (bit array) on enciphered text called a hash value.
 
-Hashes are used to verify and ensure data intergrity
+Hashes are used to verify and ensure data intergrity: no changes have been made to a set of data, 
 Based on one-way maths funct - easy to compute but v. hard to reverse this calc
-Can be used to verify authentication
+- Modulo operation is not reversible. If the result of the modulo operation is 4 – that’s great, you know the result, but there are infinite possible number combinations that you could use to get that 4.
+Can be used to verify authentication, the source of data can be verified
 
 Aritrary length text --> Hash function --> Hash value
+- The set size is determined by the hash function used.  If a change is made to the input data, even something as small as capitalizing a single letter, adding a space or removing a punctuation mark, the output data string will be different.
+- Hash functions are deterministic, meaning that no matter how many times the same data is input to the function, the output will be the same.
 
 ### Well known Hash functions
-1. Message Digest 5 (MD5)
-2. Secure Hash Algorithm 1 (SHA-1) - SHA-256
-3. Secure Hash Algorithm 2 (SHA-2) - SHA-384
+1. Message Digest 5 (MD5) - produces 128 bit hash value, MD5 is not suitable for SSL certificates or digital certificates
+2. Secure Hash Algorithm 1 (SHA-1) - It takes an input and produces a 160 bits hash value
+3. Secure Hash Algorithm 2 (SHA-2) - It produces 224, 256, 384 or 512 bits hash value. Uses improved algorithms and larger hashes
 
 ### Hash Message Authentication Code (HMAC)
 - To add authentication, HMAC uses an additional secret key as input to the hash function
 - Output HMAC - an authenticated fingerprint
+- Prevents man-in-the-middle attack
+-  provides the server and the client each with a private key that is known only to that specific server and that specific client
+- The client creates a unique HMAC, or hash, per request to the server by hashing the request data  with the private keys and sending it as part of a request
+- Key and the message are hashed in separate steps.
+- Secure file transfer protocols like FTPS, SFTP, and HTTPS use HMACs instead of just hash functions.
+- Encryption vs Hashing - encryption is data scambling that is two ways, hashing only one way
 
 ### Password salting
 
 - The addition of a unique, random string of characters (known only to the site) to the end of each password to create a different hash value
+- Salt is generated randomly for each user and each time they change their password
 - e.g g Password 546789gfvgrTY
 - Salt = SALT
 - Salted_Password = 546789gfvgrTYSALT
@@ -227,14 +238,14 @@ Digital signatures are commonly used to provide assurance of the authenticity an
 Digitally signing code provides several assurances about the code.
 
 - Code is authentic and sourced by the publisher
-- The code has not been modified since itleft the software publisher
+- The code has not been modified since it left the software publisher
 - The publisher undeniably published the code, this provides non-repudiation of publishing
 
 
 ### Digital certificates
 Equivalent to an electronic passport. Allows users, hosts and organisations to securely exchange info over the internet.
 - Verifies identities between users in a transaction
-- Provide assurance that published content has not been modified by any authorized actors
+- Provide assurance that published content has not been modified by any unauthorized actors
 - Used to exchange public keys for encrypting and decrypting web content - public key certificate proves ownership of the public key
 - Requires a 3rd party to validate the certificate
 
@@ -260,7 +271,18 @@ PKI certificate
 	- Sometimes the certificate must be revoked e.g a digital certificate can be revoked if a key is compromised/ no longer needed
 	- Two common methods for revocation: Certification Revocation List, Online Certificate Status Protocol
 
-XFO9 - digit
+- PKI is most commonly used by website operators to assure visitors to their website that the website is trustworthy
+- Provide key material to the SSL layer which permits traffic to/from the website and the end user to be exchanged in private (through encryption) and authenticated (through data authentication).
+
+**TLS and PKI**
+- TLS defines framework for the server and client to identify themselves and agree on an encryption standard and key. This identification process makes PKI possible through TLS
+**X5O9**
+
+- Standard defining the format of public key certificates.
+- X.509 certificates are used in many Internet protocols, including TLS/SSL, which is the basis for HTTPS, the secure protocol for browsing the web.
+- Authenticating and verifying the identity of a host or site
+- When you click on the padlock displayed or check the trust mark the certificate chain details prove where the certificate is generated from.
+- Enables the encryption of information exchanged via a website. When you encrypt data in transit, it that the sensitive information exchanged via the website cannot be intercepted and read by anyone other than the intended recipient. 
 
 ## Cryptanalysis
 The study of ciphertext, ciphers and cryptosystems with the aim of understanding how they work and finding and improving techniques for defeating/ weakening them 
@@ -277,7 +299,7 @@ Methods uses in cyptanalysis:
 - Chosen-ciphertext method
 	- Attacker can analyse any chosen cipher texts together with their corresponding plaintexts, with the goal of acquiring the secret key
 - Meet-in-the-middle method
-	- A plaintext attack that reduces the number of brute-force permutsations required to decrypt text that has been encrypted by more than one key, attacker encrypts plaintext using various keys to achieve an intermediate ciphertext
+	- A plaintext attack that reduces the number of brute-force permutations required to decrypt text that has been encrypted by more than one key, attacker encrypts plaintext using various keys to achieve an intermediate ciphertext
 
 
 # Access control
@@ -286,17 +308,20 @@ Methods uses in cyptanalysis:
 
 - DAC: Discretionary access control
 	- In DAC, each system object (file or data object) has an owner, and each initial object owner is the subject that causes its creation. Thus, an object's access policy is determined by its owner.
-
 - MAC: Mandatory access control
-	- Restricts the ability individual resource owners have to grant or deny access to resource objects in a file system
+	- Restricts the ability that individual resource owners have to grant or deny access to resource objects in a file system, method of limiting access to resources based on the sensitivity of the information that the resource contains and the authorization of the user to access information with that level of sensitivity.
 - RBAC: Role-based access control
 	- Organizations use RBAC to provide their employees w/ varying levels of access based on their roles and responsibilities (Accounting manager will have different privilege than a junior accountant)
 - ABAC: Attribute-based- access contol
-	-
+	- access decisions are made based on attributes (characteristics) about the subject or user making the access request, the resource being requested, what the user will do with the resource, and the environment (geolocation, network, etc.) or context of the of the request.
 - RBAC: Rule-based access control
+	- you’re focusing on the rules associated with the data’s access or restrictions. These rules may be parameters, such as allowing access only from certain IP addresses, denying access from certain IP addresses, or something more specific
 - TAC: Time-based access control
+	- Allow access based on a time period, during work hours 9am-5pm
 - The principle of least privilege
-	- Privilege escalation
+	- user is given the minimum levels of access – or permissions – needed to perform his/her job functions.
+- Privilege escalation: act of exploiting a bug, design flaw or configuration oversight in an operating system, or software application to gain elevated access to resources that are normally protected from an application or user
+
 ## AAA Framework
 
 - Authentication: users and admins must prove who they are (username and password, id card w/ magnet, certificate, ssh key)
@@ -306,13 +331,12 @@ Methods uses in cyptanalysis:
 ## AAA Architecture
 - Local AAA Authentication: sometimes known as self-contained authentication- it authenticates users against locally stored usernames/ passwords
 - Server-Based AAA Authentication - authenticates against a central AAA server that contains the usernames/ passwords for all users
-- LDAB
+- LDAP: (Lightweight Directory Access Protocol) is a software protocol for enabling anyone to locate data about organizations, individuals and other resources such as files and devices in a over an internet protocol network -- whether on the public Internet or on a corporate Intranet
 
 ## AAA Protocols
-- Remote Authentication Dial-in User Service (RADIUS): supports centralized authentication authorization and accounting management for clients that establish connection with a networj and intend to use any of the provided services
+- Remote Authentication Dial-in User Service (RADIUS): supports centralized authentication authorization and accounting management for clients that establish connection with a network and intend to use any of the provided services
 - Terminal Access Controller Access Control System (TACAS)
-- TACAS+ 
-
+- TACAS+: handles authentication, authorization, and accounting (AAA)
 
 # SSH key
 - Generate authentication key (public/private RSA key pair) on the client computer
