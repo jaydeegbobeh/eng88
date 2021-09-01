@@ -480,7 +480,7 @@ If you’re using a revocation list on your server to invalidate tokens, revokin
 - Tokens are slightly less stateless now
 
 # Penetration Testing (PenTesting)
-An authorised, simulated attack on a system to evaluate the security of the system and its vulnerabilities
+An authorised, simulated attack on a system to evaluate the security of the system and its vulnerabilities.
 
 - Is a method for gaining assurance in the security of an IT system
 - By attempting to breach some or all of a system's security
@@ -496,22 +496,21 @@ An authorised, simulated attack on a system to evaluate the security of the syst
 ## Hackers
 1. Black hat hackers - attackers
 2. White hat hackers - ethical hacker
-3. Grey hat hackers - a hacker who may sometimes violate ethical standards but don't hve malicious intent
+3. Grey hat hackers - a hacker who may sometimes violate ethical standards but don't have malicious intent
 
 ## Testing colours
 1. Whitebox testing: white hat hacker has full knowledge of the system being attacked
-2. Blackbox testing
-3. Greybox testing
-
+2. Blackbox testing: black-box testing refers to a method where an ethical hacker has no knowledge of the system being attacked. The goal of a black-box penetration test is to simulate an external hacking.
+3. Greybox testing: internal structure of system is partially known.
 
 ## PenTesters
 
 - They can be internal employees or a 3rd party penetration tester
-- Should be performed by qualified and experienced staff only (can trust that they won't leak any info about you system)
-- Pentests cannot be entirely procedural: exhaustive set of test cases cannot be drawn up => quality of a pen test is cosely linked to the abilities of the pentesters 
-
+- Should be performed by qualified and experienced staff only (can trust that they won't leak any info about your system)
+- Pentests cannot be entirely procedural: exhaustive set of test cases cannot be drawn up => quality of a pen test is closely linked to the abilities of the pentesters 
 
 ## PenTesting objectives
+
 - Vulnerability identification
 - Scenario driven testing aimed at identifying vulnerabilities
 - Scenario driven testing of detection and response capability
@@ -527,7 +526,6 @@ An authorised, simulated attack on a system to evaluate the security of the syst
 - Typically, pen tests are used to identify level of technical risk from software/hardware vulnerabilities
 - Setting limits will affect the results: what techniques are used, what targets are allowed, how much knowledge of the system is given to the testers beforehand and how much knowledge of the test is given to system admins can vary within the same test regime
 
-
 ## PenTesting expiry
 - A year or more to elapse between penetration tests, but vulnerabilities can pop up anytime in that period
 - Not really a guaranteed expiry date (in reality it could be just a week)
@@ -536,27 +534,27 @@ An authorised, simulated attack on a system to evaluate the security of the syst
 - External network penetration test: an external network penetration test is typically what most people think of when talking about pentesting
 - Internal network penetration test: simulates either the actions a hacker might take once access has been gained to a network, or those of an employess with access that they escalate
 
-
 ## PenTesting methods/target
-- Physical penetration testing
+- Physical penetration testing - tests show how a malicious actor might gain physical access to your facilities, perimeter security, intrusion alarms, motion detectors, locks, sensors, cameras, mantraps and other physical barriers to gain unauthorized physical access to sensitive areas.
 - Social engineering penetration testing - identify weakness in a person, group of people: phishing, impersonation, leave a USB device containing malicious code, find passwords by looking at emplooyees' desks
-- Web Application penetration testing - evealuate the development, design and coding of your website/web app to find any area what exposed sensitive customer info/ company data
-- Client side penetration testing -
-- Cloud security
+- Web Application penetration testing - evaluate the development, design and coding of your website/web app to find any area that exposes sensitive customer info/ company data - e.g entering old password before being able to change password for an account
+- Client side penetration testing - pentesting from client side usually for email clients, web apps 
+	- Target specific employees/groups. Email carrying malicious payload or by pointing the victim to a malicious Web site. Exploit Required. Use Social Engineering. Convince a user to install your malware without using an exploit. Set up a phishing site targeting organization’s users. Large-scale client-side infection campaigns. Rely on victims to visit compromised Web sites that deliver client-side exploits
+- Cloud security - a lot of services are on the cloud and you want to be able to protect those services, but you would need to notify cloud provider before doing pentests e.g AWS allows you to pentest the company's Application Programming Interface (HTTP/HTTPS), web applications hosted by the company, application server and stack (e.g programming languages python...), virtual machines/OS but AWS does not allow you to test Services/apps that belong to AWS e.g Infrastructure-as-a-Service, the physical hardware/underlying infrastructure or facility that belongs to AWS, EC2 environments belonging to other organisations.
 
 ## Blindness level
-- Targeted(blindless) penetration testing - 
-- Blind penetration testing -
-- Double blind penetration testing
+- Targeted(blindless) penetration testing - IT specialist that work within the org work with a specialist pentesting team - often called "lights-on" as all those involved know that the test is being carried out and also know when it starts and ends.
+- Blind penetration testing - simulates a real cyber attackers, tester gets v. limited data before test takes place e.g company name/ website URL
+- Double blind penetration testing - the IT/security team within the org are not warned about the test taking place, tests the security monitoring methods, the incident identification and response of the IT/cybersec specialists.
 
 ## PenTesting phases
-- Pre-engagement interactions
+- Pre-engagement interactions: prepare and plan, outline logistics of the test, objectives/goals of custerms they would like you to achieve and if there are any legal implications
 - Reconnaissance: gather as much inteligence on the organization and the potential targets for exploit
-- Scanning:
-- Threat modeling: mapping out potential threats: Where am I most vulnerable to attack? What are the most relevant threats? what do I need to do to safeguard against these threats?
+- Scanning: attackers begin to start singling out possible areas of attack against their target 
+- Threat modeling: mapping out potential threats: Where am I most vulnerable to attack? What are the most relevant threats? What do I need to do to safeguard against these threats?
 - Exploitation: with a map of all possible vulnerabilities and entry points, pentester begins to test the exploits found within the network, applications and data
-- Foothold installation
-- Analysis and reporting
+- Foothold installation: tester maintains continued control over the compromised system, establish a foothold by installing a persistent backdoor/ downloading additional utilities/malware to the system.
+- Analysis and reporting: pentesters will give review of their findings and recommendations.
 - Clean up and remediation
 
 
@@ -571,7 +569,6 @@ An authorised, simulated attack on a system to evaluate the security of the syst
 	- Must trust that the pentester won't abuse their role
 	- Test conditions must be realistic - employees might prepare for the test whereas a genuine attack could happen at any point in ways that might be creative/ hard to plan for
 
-
 ## Reconnaissance
 Discovering and collection info about a system
 
@@ -581,15 +578,16 @@ The process of collecting as much info as possible about the target system, find
 - Get an overview of the secuirty posture, the overall status of cybersecurity readiness (e.g firewalls)
 	- Controls and processes you have in place to protect against cyber attacks
 	- Ability to detect attacks
-	- Ability to react and reocver from security events
+	- Ability to react and recover from security events
 	- Level of automation in your security program
 - Reduce attack area
 - Identify vulnerabilities
 - Draw network map
 
 ### OSINT Sources
+Open source intelligence (OSINT) is the practice of collecting information from published or otherwise publicly available sources.
 - Surface web
-- Deep web
+- Deep web, accessible through authentication
 - Dark web
 
 ### OSINT Use cases
@@ -608,9 +606,9 @@ The process of collecting as much info as possible about the target system, find
 - Exposed data on the enterprise website
 - Exposed data already on the internet
 - Hidden data in files
-- Connected devices search
+- Connected devices search e.g webcams
 
-#### WHOIS - domain info
+#### WHOIS - domain info, identifies who owns a domain and how to get in contact with them
 1. Who Is https://www.who.is
 2. Domain Tools https://whois.domaintools.com/
 3. ICANN lookup https://lookup.icann.org/
@@ -622,6 +620,8 @@ DNSRecon (python script)
 ```bash
 dnsrecon -D subdomains-top1mil-5000.txt -d spartaglobal.com -t brt > dns_recon_sparta.txt
 ```
+- DNS information helps in mapping the network infrastructure of the target host.
+- DNSRecon can perform enumerations:  the process of locating all the DNS servers and their corresponding records for an organization. DNS enumeration will yield usernames, computer names, and IP addresses of potential target systems. 
 
 #### Google hacking and dorking 
 - operator_name:keyword
@@ -632,9 +632,13 @@ dnsrecon -D subdomains-top1mil-5000.txt -d spartaglobal.com -t brt > dns_recon_s
 	- define:
 	- site:
 	- phonebook:
+- Used to find security holes in the configuration and computer code tha websires are using
+- Devices connected to the Internet can be found. A search string such as inurl:"ViewerFrame?Mode=" will find public web cameras.
+- intitle:index.of followed by a search keyword. This can give a list of files on the servers. For example, intitle:index.of mp3 will give all the MP3 files available on various types of servers.
 
 #### Harvester
-
+- gather emails, subdomains, hosts, employee names, open ports and banners from different public sources like search engines and the SHODAN data base
+- Intended to help pentesters in the early stages of pentests in order to understand the customer footprint on the internet
 #### DShield
 
 #### Virus total
@@ -652,7 +656,6 @@ dnsrecon -D subdomains-top1mil-5000.txt -d spartaglobal.com -t brt > dns_recon_s
 #### Sublist3r
 
 #### [OSINT Framework](osintframework.com)
-
 
 # Scanning
 
