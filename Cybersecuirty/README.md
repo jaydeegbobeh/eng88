@@ -385,7 +385,7 @@ The process of recognising a user's identity to allow/deny resources.
 	- Rainbow Table attack: using a rainbow hash table to crack the passwords stored in a database system
 - Defence
 	- Salt technique prevents rainbow table attack
-	- Key stretching, converting a password to a longer and more random key for encryption
+	- Key stretching, converting a password to a longer and more random key for encryption: hash password, then hash the hash of the password, hash the hash of the hashed password
 
 ## Token Authentication
 A material device that is used to access secure systems
@@ -395,7 +395,7 @@ A material device that is used to access secure systems
 ## Biometric Authentication
 
 Advantages:
-- Can be easily compared to authorized features saved in a databse
+- Can be easily compared to authorized features saved in a database
 - Can control physical access when installed on entrances and doors
 - Can be added into multi-factior authentication process password + voice or token + face recognation
 
@@ -411,6 +411,7 @@ Types
 - An electronic document based on the idea of a passport
 - Contains the digital identity of a user including a public key and the digital signiture of a certification authority
 - Digital certificates prove the ownership of a public key issued by the certification authority
+- To prove  ownership of pub key users provide dc when they sign into a server, server verifies credibility of the digital signature and CA and the server uses cryptography to confirm that the user has the correct private key associated with the  certificate.
 
 ## Multifactor Authentication
 
@@ -418,7 +419,7 @@ Types
 - e.g codes generated from user's smartphone, fingerprints, facial recognition
 - Increase the confidence of users as there are multiple layers of security
 - Good defence against account hacks, but disadvantage: people may lose their phones or SIMs => can't generate an authentication code
-
+- In vulnerability checker app we had username password and also captcha
 
 ## Authentication Protocols
 - NTLM - suite of Microsoft security protocols intended to provide authentication, integrity and confidentiality to users
@@ -426,7 +427,6 @@ Types
 - PAP - password authentication protocol (weak, vulnerable protocol)
 - CHAP - challenge handshake authentication protocol
 - Secure Sockets Layer (SSL)/Transport Layer Security (TLS) - client uses the servers public key to encrypt the data that is used to compute the secret key, server can only generate the secret key if it can decrypt the data with the correct private key.
-
 
 # Web App Authentication
 
@@ -440,8 +440,8 @@ To associate an incoming request e.g HTTP
 1. Client sends login request w/ credentials to backend server
 2. Server validates credentials, if login successful web server creates a session in the database and include a set-cookie header on the response containing a unique ID in the cookie object
 3. Browser saves cookie locally, as long as the user stays logged in, client must send the cookie in all the requests to the server
-	- server then compares session ID stored in the cookie against the one one in the database to verify validity
-4. During logout, server makes the cookie xpire by deleting it from the server
+	- server then compares session ID stored in the cookie against the one in the database to verify validity
+4. During logout, server makes the cookie expire by deleting it from the server
 
 ### Advantages of cookie-based authentication
 - Using cookies in authentication makes the app stateful
@@ -459,7 +459,7 @@ To associate an incoming request e.g HTTP
 ## Token-based authentication
 - Tokens offer a second layer of security, and administrators have detailed control over each action and transaction.
 - Used to store the user's state on the client machine
-- The JSON Web Token (JWT) is an open standard that defines a way of securly transmitting info between a client and a server as a JSON object
+- The JSON Web Token (JWT) is an open standard that defines a way of securely transmitting info between a client and a server as a JSON object
 - Anatomy of JWT token: 3 parts searated by dots
 - Stateless, self contained object
 
@@ -469,15 +469,14 @@ header.payload.signature - do hashing for these values (SHA-256)
 - Upon request, server verifies credentials before generating an encrypted JWT w/ secret key and sends back to the client
 - On client side browser stores the token locally using local storage, session storage or cookie storage
 - On future requests, JWT is added to authorization header, and server will validate its signature by decoding the token before sending the response
-- On logout operation, token on client-side is destroyed without server interation?
+- On logout operation, token on client-side is destroyed without server interation
 
 ### Advantages of token-based authentication
 - Stateless, webserver does not need to keep a record of tokens as they are **self-contained** - server just need to sign tokens on successful login and verify incoming tokens in requests are valid.
-- 
--
+- Can be generated from anywhere 
 
-## Revoking cookies/json
-
+## Revoking cookies/json token
+If you’re using a revocation list on your server to invalidate tokens, revoking a token can instantly boot the attacker out of your system until they get hold of a new token. While it is a temporary solution, it will make the attacker’s life slightly more difficult.
 
 # Penetration Testing (PenTesting)
 An authorised, simulated attack on a system to evaluate the security of the system and its vulnerabilities
@@ -645,7 +644,7 @@ dnsrecon -D subdomains-top1mil-5000.txt -d spartaglobal.com -t brt > dns_recon_s
 
 #### Shodan
 
-#### Wappalyzer - firebox add-on
+#### Wappalyzer - firefox add-on
 
 #### crt.sh
 
