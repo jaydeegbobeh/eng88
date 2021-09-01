@@ -574,7 +574,7 @@ An authorised, simulated attack on a system to evaluate the security of the syst
 ## Reconnaissance
 Discovering and collection info about a system
 
-### Foorprinting
+### Footprinting
 The process of collecting as much info as possible about the target system, finding ways to penetrate the system
 
 - Get an overview of the secuirty posture, the overall status of cybersecurity readiness (e.g firewalls)
