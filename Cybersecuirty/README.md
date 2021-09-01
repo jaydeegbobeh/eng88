@@ -477,6 +477,7 @@ header.payload.signature - do hashing for these values (SHA-256)
 
 ## Revoking cookies/json token
 If you’re using a revocation list on your server to invalidate tokens, revoking a token can instantly boot the attacker out of your system until they get hold of a new token. While it is a temporary solution, it will make the attacker’s life slightly more difficult.
+- Tokens are slightly less stateless now
 
 # Penetration Testing (PenTesting)
 An authorised, simulated attack on a system to evaluate the security of the system and its vulnerabilities
