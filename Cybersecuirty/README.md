@@ -706,7 +706,7 @@ Gathering information about a network to determine all active devices on it
 - Ports are classified as follows:
 	- Open: the destination responds
 	- Closed: destination received the request packet but responds with a reply that there is no service listening at the port
-	- Filtered: request packet is send but the host does not reply
+	- Filtered: request packet is sent but the host does not reply
 
 - Port scanning methodology
 	- Vanilla: scan all 65535 ports
@@ -717,6 +717,7 @@ Gathering information about a network to determine all active devices on it
 	- Keep dely between port scans to prevent it looking suspicious and being flagged to admin, you can also send decoy traffic
 
 ### TCP Handshake
+- Three-Way HandShake or a TCP 3-way handshake is a process which is used in a TCP/IP network to make a connection between the server and client. It is a three-step process that requires both the client and server to exchange synchronization and acknowledgment packets before the real data communication process starts.
 - 3-way handshake to establish a reliable connection between a client and server: both sides synchronize (SYN) and acknowledge eachother (ACK)
 1. SYN: client wants to establish connection with server => sends a segment with SYN (synchronise sequence number), informs server that client is likely to start communication 
 2. SYNACK: server responds to client request with SYN-ACK signal bits. ACK signifies the response of segment it received and SYN signifies with what sequence number it is likely to start the segments with
@@ -735,7 +736,7 @@ Gathering information about a network to determine all active devices on it
 ### UDP Scanning
 
 TCP has a connection between sender/reciever
-UCP does not have a coonection
+UDP does not have a connection
 
 - Sends a UDP packet to various ports on target system and determine the availability of the host from the response
 - Receiving a UDP response = port is open, ICMP port unreachable = closed port, no response could indicate that the port is either open or filtered by a firewall/packet filter
@@ -743,7 +744,7 @@ UCP does not have a coonection
 ### OS Fingerprinting
 
 - Determining the operating system used by a host on a network
-	- IP TTL values: time to live in the IP header, the amount of time that a packet is set to exist inside a netwrok before being discarded by a router
+	- IP TTL values: time to live in the IP header, the amount of time that a packet is set to exist inside a network before being discarded by a router
 	- IP DF option: don't fragment, 
 	- IP Type of Service (TOS)  
 	- IP ID values (IPID sampling)
@@ -756,14 +757,14 @@ UCP does not have a coonection
 	- Running services
 	- Open port paterns
 
-
-Operating System 	Time To Live 	TCP Window Size
-Linux (Kernel 2.4 and 2.6) 	64 	5840
-Google Linux 	64 	5720
-FreeBSD 	64 	65535
-Windows XP 	128 	65535
-Windows Vista and 7 (Server 2008) 	128 	8192
-iOS 12.4 (Cisco Routers) 	255 	4128
+| Operating System                  | Time To Live | TCP Window Size |
+|-----------------------------------|--------------|-----------------|
+| Linux (Kernel 2.4 and 2.6)        | 64           | 5840            |
+| Google Linux                      | 64           | 5720            |
+| FreeBSD                           | 64           | 65535           |
+| Windows XP                        | 128          | 65535           |
+| Windows Vista and 7 (Server 2008) | 128          | 8192            |
+| iOS 12.4 (Cisco Routers)          | 255          | 4128            |
 
 
 ## Hybrid scanning
