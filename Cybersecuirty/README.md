@@ -748,14 +748,14 @@ UDP does not have a connection
 	- IP DF option: don't fragment, 
 	- IP Type of Service (TOS)  
 	- IP ID values (IPID sampling)
-	- TCP Window size
+	- TCP Window size: The TCP receive window size is the amount of receive data (in bytes) that can be buffered during a connection. The sending host can send only that amount of data before it must wait for an acknowledgment and window update from the receiving host. 
 	- TCP Options (TCP SYN and SYN+ACK packets - can have assigned values between OS)
 	- Initial sequence number (ISN) sampling
-	- DHCP requests
-	- ICMP requests
+	- DHCP requests: most OS’ DHCP clients will ask for DHCP options in a specific sequence.
+	- ICMP requests: from layout of reply, if the ICMP reply contains a TTL value of 128 then it is a Windows machine, and if the ICMP reply contains a TTL value of 64 then it is a Linux-based machine.
 	- HTTP packets
 	- Running services
-	- Open port paterns
+	- Open port paterns: Microsoft Windows machines often have TCP ports 135 and 139 open. Windows 2000 and newer also listen on port 445. Meanwhile, a machine running services on port 22 (ssh) and 631 (Internet Printing Protocol) is likely running Unix.
 
 | Operating System                  | Time To Live | TCP Window Size |
 |-----------------------------------|--------------|-----------------|
@@ -768,9 +768,11 @@ UDP does not have a connection
 
 
 ## Hybrid scanning
-
+- Use both active and passwive scanning helps you to gain an overview of the processes in the networks
+- Active scanning should be used in small amounts, in extreme cases to avoid generating a large amount of traffic on the network
+- Make sure you can discover more machines rather than just relying on one.
 ## Nmap
-- Open source utility for network discovery
+- Open source utility for network discovery, uses active scanning methods
 
 ### e.g nmap commands
 
@@ -778,8 +780,8 @@ UDP does not have a connection
 - nmap -p2000-3000 172.25.1.101 ; scan range of ports
 
 ## Vulnerability scanning
-Identifying potential vulnerabilities in network devices e.g firewalls, routes, switches, servers and applications - once vulnerabilities are found, they can be exploited by the pentester.
-- Scan specified set of ports on a remote host
+Identifying potential vulnerabilities in network devices e.g firewalls, routers, switches, servers and applications - once vulnerabilities are found, they can be exploited by the pentester.
+- Scan specifies set of ports on a remote host
 - Tries to test the service offered at each port for its know vulnerabilities
 - Automated
 - Doesn't exploit the vulnerabilities
@@ -804,12 +806,15 @@ Identifying potential vulnerabilities in network devices e.g firewalls, routes, 
 - Cloud applications
 - Data breach
 - Vulnerabilities in shares of \\server\share over the SMB protocol
+	- 	- SMB – protocol that’s used in sharing in windows system – e.g share folder on the internet – some ppL don’t put authentication when they share – hacker can access database on the server
 
 ### Vulnerability scanner types
 - Network vulnerability scanner
-	-
+	- Network-based vulnerability scanner, in simplistic terms, is the process of identifying loopholes on a computer’s network, or IT assets, which can be exploited by hackers and threat actors.
+Read more at: https://www.appknox.com/blog/agent-based-and-network-based-vulnerability-scanning
 - Wireless scanner
 - Agent based scanners
+	- Agent-based scanners make use of software scanners on each and every device; the results of the scans are reported back to the central server. Such scanners are well equipped to find and report out on a range of vulnerabilities.
 - Web application scanner
 - Database scanners
 
@@ -818,8 +823,9 @@ Identifying potential vulnerabilities in network devices e.g firewalls, routes, 
 - Change based
 	- based of software, hardware updates
 - Hygeine based
-	- best practices that an organisation undertakes
+	- best practices that an organisation undertakes, when there's something new in system e.g apps, OS updates look for new vulnerabilities
 - Compliance based
+	- comply with standard of organisation
 
 ### Running your scans
 - Are you systems accessible to the scanner?
@@ -839,7 +845,6 @@ Identifying potential vulnerabilities in network devices e.g firewalls, routes, 
 - sqlmap an open source penetration testing tool
 - automates the process of detecting and exploiting SQL injection flaws and taking over of database servers
 
-
 ## Exploitation
 
 ### Exploitation catergories
@@ -851,17 +856,22 @@ Named by:
 - Type of vulnerability they exploit (BOF - buffer overflow)
 - Where they are local/remote exploits
 - The result of running the exploit e.g DoS/ spoofing
+
 ### Exploit types
 - Null or default passwords
-	- Netwroking hardware can have default credentials
+	- Networking hardware can have default credentials
 	- Admins sometimes create privileged user accounts in a rush and leave the password null
 	- Wireless access points and preconfigured secure server appliances
 - Network exploits
-	- IP Spoofing - change I
-	- Man-in-the-middle
-	- Firewall Traversal
-	- ARP Poisoning
-	- WLAN
+	- IP Spoofing - the creation of Internet Protocol (IP) packets which have a modified source address in order to either hide the identity of the sender, to impersonate another computer system, or both. Used predominately to launch DDoS and Man-In-The-Middle attacks aiming either to disrupt the delivery of network services or to steal sensitive data.
+		- GitHub hit by a DDOS attack that was executed by spoofing GitHub's IP address and sending data to several servers.
+	- Man-in-the-middle - attacker secretly relays and possibly alters the communications between two parties who believe that they are directly communicating with each other
+		- e.g DNS spoofing spoofing is a technique that forces a user to a fake website rather than the real one the user intends to visit. If you are a victim of DNS spoofing, you may think you’re visiting a safe, trusted website when you’re actually interacting with a fraudster. The perpetrator’s goal is to divert traffic from the real site or capture user login credentials.
+	- Firewall Traversal - strategy of bypassing firewalls which are commonly used to block access to certain sites and communication protocols.
+	- ARP Poisoning - malicious actor sends falsified ARP (Address Resolution Protocol) messages over a local area network. This results in the linking of an attacker’s MAC address with the IP address of a legitimate computer or server on the network. Once the attacker’s MAC address is connected to an authentic IP address, the attacker will begin receiving any data that is intended for that IP address. ARP spoofing can enable malicious parties to intercept, modify or even stop data in-transit
+		- The technique is often used to initiate further offensives, such as session hijacking or denial-of-service
+	- WLAN 
+		- Evil twin is a fraudulent Wi-Fi access point that appears to be legitimate but is set up to eavesdrop on wireless communications. The evil twin is the wireless LAN equivalent of the phishing scam. The US Department of Justice charged hackers within the Russian military agency with implementing evil twin attacks to steal credentials and malware targeting organizations such as anti-doping agencies, nuclear power operations, and chemical testing laboratories.
 - Eavesdropping
 	- Works mostly with plain text transmission protocols - HTTP
 	- Remote attacker needs access to a compromised system
@@ -939,7 +949,7 @@ Denial of Service - Availability| Denying or obstructing access to resources req
 Elevation of Privilege - Authorization| Allowing access to someone without proper authorization
 
 ## PASTA: Process for Attack Simulation and Threat Analysis
-
+v 
 PASTA gives an attacker-centric view of the system.
 Phases:
 1. Define objectives
