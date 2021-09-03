@@ -974,7 +974,7 @@ Focusses of determining the severity of a threat:
 
 # Digital Forensics Incident Response (DFIR)
 
-- IR: structure methodology for handling security incidents, breaches and cyber threats
+- IR: structured methodology for handling security incidents, breaches and cyber threats
 - Well-defined incident response plan (IRP) allows you to effectively identify, minimize the damage, and reduce the cost of a cyber attack, while finding and fixing the cause to prevent future attacks.
 
 ## Incident categorisation
@@ -1042,9 +1042,9 @@ Focusses of determining the severity of a threat:
 	- What tools will ensure similar attacks will not reoccur? (File integrity monitoring)
 6. Post-incident activity
 	- What changes need to be made to the security?
-	- How should employee be trained differently?
+	- How should employees be trained differently?
 	- What weakness did the breach exploit?
-	- How will your 
+	- How will you ensure a simalar breach doesn't happen again 
 - Emergency contact/commincations list
 - At least one conference number
 - Escalation criteria
@@ -1054,19 +1054,21 @@ Focusses of determining the severity of a threat:
 - Security policy review list
 
 ### Playbook
+An incident management handbook gives your team a set of processes for responding, resolving, and learning from every incident, whether it’s a security issue or another emerging vulnerability
 
 ## Digital Forensics
 ### Computer Forensics
-Analysing and collecting info for:
+Analysing and collecting evidence for:
 - Computer systems
-- Embedded systems
+- Embedded systems: computer hardware system with software that is designed to perform a dedicated function e.g central heating systems, ATM machines
 - Static memory e.g USB pen drives
 - Includes reporting the results
 
 ### Mobile Device Forensics
 - Mobile device forensics collect data from mobile devices
-- Mobile devices are diffrent from computers as they have inbuild communication systems such as GSM
+- Mobile devices are diffrent from computers as they have inbuilt communication systems such as GSM
 - Data retrieved from movile devices includes
+	- sms, emails, data regarding location of user, user dictionary content, usage logs
 
 ### Network Forensics
 - Involves capturing and analysisng network traffic and network packets over local and wide area networks (or internet)
@@ -1076,7 +1078,7 @@ Analysing and collecting info for:
 	- Stop look and listen
 
 ### Database Forensics
-- Study of databases and its metadata
+- Study of databases and its metadata: data that provides information about other data
 - Analyses:
 	- database content
 	- log files
