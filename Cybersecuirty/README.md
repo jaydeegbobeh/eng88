@@ -1103,9 +1103,9 @@ Analysing and collecting evidence for:
 - Involves interactions amongst various cloud actors
 	- Cloud providers: a third-party company offering a cloud-based platform, infrastructure, application or storage services
 	- Cloud consumer: an organization (or a human) that has a formal contract or arrangement with a cloud provider to use IT resources made available by the cloud provider. 
-	- Cloud broker: Cloud Broker is an entity that manages the use, performance and delivery of cloud services, and negotiates relationships between cloud providers and cloud consumers
-	- Cloud carrier: A cloud carrier acts as an intermediary that provides connectivity and transport of cloud services between cloud consumers and cloud providers.
-	- Cloud auditer: A cloud auditor is a party that can perform an independent examination of cloud service controls with the intent to express an opinion thereon. 
+	- Cloud broker: an entity that manages the use, performance and delivery of cloud services, and negotiates relationships between cloud providers and cloud consumers
+	- Cloud carrier: acts as an intermediary that provides connectivity and transport of cloud services between cloud consumers and cloud providers.
+	- Cloud auditer: a party that can perform an independent examination of cloud service controls with the intent to express an opinion thereon. 
 
 ### Digital Forensic Phases
 1. Phase I - first response: what is done after security incident takes place, dependent on nature of attack
