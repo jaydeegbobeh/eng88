@@ -1066,7 +1066,7 @@ Analysing and collecting evidence for:
 
 ### Mobile Device Forensics
 - Mobile device forensics collect data from mobile devices
-- Mobile devices are diffrent from computers as they have inbuilt communication systems such as GSM
+- Mobile devices are diffrent from computers as they have inbuilt communication systems such as GSM - tandard developed by the European Telecommunications Standards Institute (ETSI) to describe the protocols for 2G 3G, 4G digital cellular networks used by mobile devices such as mobile phones and tablets.
 - Data retrieved from movile devices includes
 	- sms, emails, data regarding location of user, user dictionary content, usage logs
 
@@ -1082,26 +1082,30 @@ Analysing and collecting evidence for:
 - Analyses:
 	- database content
 	- log files
-	- in-RAM data to recover pieces of digital evidence or to buld a timeline
+	- in-RAM data to recover pieces of digital evidence or to build a timeline
 
 ### Forensic Data Analysis
 - Covers the investigation of financial crimes associated with structured data - data from application systems or their databases
-- Primary motive of 
+- Primary motive of forensic data analysis is to find a pattern behind the fradulent activities
 
 ### Email Forensics
-- Email header analysis
-- Email server analysis
+- Email header analysis: Email headers contain important information including name of the sender and receiver, the path (servers and other devices) through which the message has traversed
+- Email server analysis:
 - Investigation of network devices
 - Sender mailer fingerprints
 - Software embedded indentifiers
-- Bait tactics
+- Bait tactics: an email investigation technique that’s used when the location of a suspect or cybercriminal is unknown. In this, the investigators send an email that contains a http: “<img src>” tag to the suspect. The image source is at a computer that’s monitored by the investigators. When the suspect opens the email, the computer’s IP address is registered in a log entry on the HTTP server that hosts the image. The investigators can use the IP address to track the suspect.
+
 
 ### Cloud forensisc
-- The application of digital forensics in cloud computing as a subset of network forensics to gather and preserve evidence in a way that is suitable for presnetation in a court of law
+- The application of digital forensics in cloud computing as a subset of network forensics to gather and preserve evidence in a way that is suitable for presentation in a court of law.
 - Cloud forensic is the amalgamation of all different forensics
 - Involves interactions amongst various cloud actors
-	- Cloud providers
-	- Cloud
+	- Cloud providers: a third-party company offering a cloud-based platform, infrastructure, application or storage services
+	- Cloud consumer: an organization (or a human) that has a formal contract or arrangement with a cloud provider to use IT resources made available by the cloud provider. 
+	- Cloud broker: Cloud Broker is an entity that manages the use, performance and delivery of cloud services, and negotiates relationships between cloud providers and cloud consumers
+	- Cloud carrier: A cloud carrier acts as an intermediary that provides connectivity and transport of cloud services between cloud consumers and cloud providers.
+	- Cloud auditer: A cloud auditor is a party that can perform an independent examination of cloud service controls with the intent to express an opinion thereon. 
 
 ### Digital Forensic Phases
 1. Phase I - first response: what is done after security incident takes place, dependent on nature of attack
