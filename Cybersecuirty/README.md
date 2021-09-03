@@ -868,7 +868,7 @@ Named by:
 	- Man-in-the-middle - attacker secretly relays and possibly alters the communications between two parties who believe that they are directly communicating with each other
 		- e.g DNS spoofing spoofing is a technique that forces a user to a fake website rather than the real one the user intends to visit. If you are a victim of DNS spoofing, you may think you’re visiting a safe, trusted website when you’re actually interacting with a fraudster. The perpetrator’s goal is to divert traffic from the real site or capture user login credentials.
 	- Firewall Traversal - strategy of bypassing firewalls which are commonly used to block access to certain sites and communication protocols.
-	- ARP Poisoning - threat actor sends falsified ARP (Address Resolution Protocol) messages over a local area network. Results in linking of an attacker’s MAC address with the IP address of a legit computer or server on the network. Once the attacker’s MAC address is connected to an authentic IP address, the attacker will begin receiving any data that is intended for that IP address. ARP spoofing can enable malicious parties to intercept, modify or even stop data in-transit
+	- ARP Poisoning - threat actor sends falsified ARP (Address Resolution Protocol) messages over a local area network. Results in linking of an attacker’s MAC address with the IP address of a legitimate computer or server on the network. Once the attacker’s MAC address is connected to an authentic IP address, the attacker will begin receiving any data that is intended for that IP address. ARP spoofing can enable malicious parties to intercept, modify or even stop data in-transit
 		- The technique is often used to initiate further attacks, such as session hijacking or denial-of-service
 	- WLAN 
 		- Evil twin is a fraudulent Wi-Fi access point that appears to be legitimate but is set up to eavesdrop on wireless communications. The evil twin is the wireless LAN equivalent of the phishing scam. The US Department of Justice charged hackers within the Russian military agency with implementing evil twin attacks to steal credentials and malware targeting organizations such as anti-doping agencies, nuclear power operations, and chemical testing laboratories.
@@ -876,9 +876,14 @@ Named by:
 	- Works mostly with plain text transmission protocols - HTTP
 	- Remote attacker needs access to a compromised system
 	- Prevent using cryptography
+	- This process typically sees attackers exploit unsecured or open network communications and unencrypted data, which enables them to access data in transit between devices. Hackers can also eavesdrop by placing bugs on telephones, which allow them to intercept and record communication.
+
 - Service vulnerabilities
 	- HTTP-based services are vulnerable to remote command attack
-	- Services might have vulnerabilities e.g buffer overflow
+		- Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. Command injection attacks are possible when an application passes unsafe user supplied data (forms, cookies, HTTP headers etc.) to a system shell
+	- Services might have vulnerabilities e.g buffer overflow: 
+		- Buffers are memory storage regions that temporarily hold data while it is being transferred from one location to another. A buffer overflow (or buffer overrun) occurs when the volume of data exceeds the storage capacity of the memory buffer. As a result, the program attempting to write the data to the buffer overwrites adjacent memory locations.
+		-Attackers exploit buffer overflow issues by overwriting the memory of an application. This changes the execution path of the program, triggering a response that damages files or exposes private information. For example, an attacker may introduce extra code, sending new instructions to the application to gain access to IT systems.
 	- Web server exploits
 		- Session hijacking: compromises the session token by stealing or predicting a valid session token to gain unauthorized access to the web server.
 			- Can be done through session sniffing, client-side attacks e.g malicious JavaScript attacks, man in the middle attack - alters communication between two parties who believe they are communicating with each other
