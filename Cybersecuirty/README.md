@@ -1096,7 +1096,6 @@ Analysing and collecting evidence for:
 - Software embedded indentifiers
 - Bait tactics: an email investigation technique that’s used when the location of a suspect or cybercriminal is unknown. In this, the investigators send an email that contains a http: “<img src>” tag to the suspect. The image source is at a computer that’s monitored by the investigators. When the suspect opens the email, the computer’s IP address is registered in a log entry on the HTTP server that hosts the image. The investigators can use the IP address to track the suspect.
 
-
 ### Cloud forensisc
 - The application of digital forensics in cloud computing as a subset of network forensics to gather and preserve evidence in a way that is suitable for presentation in a court of law.
 - Cloud forensic is the amalgamation of all different forensics
@@ -1108,12 +1107,15 @@ Analysing and collecting evidence for:
 	- Cloud auditer: a party that can perform an independent examination of cloud service controls with the intent to express an opinion thereon. 
 
 ### Digital Forensic Phases
-1. Phase I - first response: what is done after security incident takes place, dependent on nature of attack
-2. Phase II- search and seizure
-3. Phase III - collect the evidence
-4. Phase IV - secure the evidence
-5. Phase V - data acquisition
-6. Phase VI - data analysis
+1. Phase I - first response: The action performed right after the occurrence of a security incident is known as the first response. It is highly dependent on the nature of the incident.
+2. Phase II- search and seizure: Under this phase, the professionals search for the devices involved in carrying out the crime. These devices then carefully seized to extract information out of them.
+3. Phase III - collect the evidence: After the search and seizure phase, professionals use the acquired devices to collect data. They have well-defined forensic methods for evidence handling.
+4. Phase IV - secure the evidence:The forensic staff should have access to a safe environment where they can secure the evidence. They determine if the collected data is accurate, authentic, and accessible.
+5. Phase V - data acquisition: Data acquisition is the process of retrieving Electronically Stored Information (ESI) from suspected digital assets. It helps to gain insights into the incident while an improper process can alter the data, thus, sacrificing the integrity of evidence.
+6. Phase VI - data analysis: Under data analysis, the accountable staff scan the acquired data to identify the evidential information that can be presented to the court. This phase is about examining, identifying, separating, converting, and modeling data to transform it into useful information.
+7. Phase VII - evidence assessment: The process of evidence assessment relates the evidential data to the security incident. There should be a thorough assessment based on the scope of the case.
+8. Phase VIII - documentation and reporting: This is a post-investigation phase that covers reporting and documenting of all the findings. Also, the report should have adequate and acceptable evidence in accordance to the court of law.
+9. Phase XI - testify as an expert witness: The forensic investigators should approach the expert witness to affirm the accuracy of evidence. An expert witness is a professional who investigates the crime to retrieve evidence.  
 
 ## OWASP Top 10 security risks
 
