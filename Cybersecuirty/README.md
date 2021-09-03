@@ -901,21 +901,19 @@ Named by:
 - Host based vulnerabilites
 	- Workstations and desktops are more prone to exploitation
 	- Safeguards can be implemented e.g email client software does not automatically open or execute attachments
-	- Automat
+	- Automatic update of OS, software
 - Denial of Service (DoS) attacks
 	- Ping flood attacks:
 	- Source packets usually forged
-	- IDS, IPS, IPDs
+	- IDS intrusion detection sytem, IPS instusion prevention system, IDPs intrusion detection prevention
 
 ### Exploit kits
 Tools embedded in compromised web pages
-- Automatically scan a visitor's machine for vulnerabilities and attamept to exploit them 
+- Automatically scan a visitor's machine for vulnerabilities and attempt to exploit them 
 - If exploit is successful, kit injects malware to the user's system
-
 
 e.g
 - Magnitude: attackers inject malicous code into adverts that redirects users to malicious websites, infects users with ransomeware (can encrypt files and delete file backups) with a focus on users in south korea also Taiwan and Hong Kong attackers behind it utilised CVE common vulnerabilities and exposures database as an exploit - modified and obscured it, also used elevation of privelege exploit
-
 - exploit as a service
 
 ### Exploit databases
