@@ -16,8 +16,6 @@
     - abstraction focuses on hiding the internal implementations of a process or method from the user
         - The user knows what they are doing but not how it's done
 
-
-
 ## Modules
 
 We have built in Modules that we can find on Python's Library

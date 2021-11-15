@@ -457,7 +457,7 @@ To associate an incoming request e.g HTTP
 - Client must send cookie on every request, even w/ URLs that don't need authentication for access
 
 ## Token-based authentication
-- Tokens offer a second layer of security, and administrators have detailed control over each action and transaction.
+- Tokens offer a second layer of security, and administrators have detailed control over each action and transaction - identify user
 - Used to store the user's state on the client machine
 - The JSON Web Token (JWT) is an open standard that defines a way of securely transmitting info between a client and a server as a JSON object
 - Anatomy of JWT token: 3 parts searated by dots
@@ -729,7 +729,7 @@ Gathering information about a network to determine all active devices on it
 	- Determines whether a port is filtered or unfiltered
 - TCP Connect Scan
 	- Needs a full connection (SYN ACK) => more likely to log full TCP connection, trigger IDS
-- NULL (no flag in header), FIN (fin flag set to 1), Xmas Scan 
+- NULL (no flag in header), FIN (fin flag set to 1, finish connection), Xmas Scan 
 	- Each results in a closed port, open or filtered port
 - IDLE Scan
 

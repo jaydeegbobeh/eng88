@@ -13,7 +13,7 @@ Separates the concerns between the visual elements of the app that the user will
 	- Front end - in which the user will see and deal with.
 	- Back end – you have the software that will serve on the server and the database. This is where the DevOps team are.
 - Microservice
-Consists of a collection of small, autonomous service, each service is self-contained.
+Consists of a collection of small, autonomous services, each service is self-contained.
 - Advantages	
 	- Microservices are deployed independently => easy to manage bug fixes and feature releases
 	- Compared to monolithic application, code dependencies can become tangled adding a new feature requires editing code in many places, in a microservice you don't share code or data stores, minimising dependencies making it much easier to add new features.
@@ -91,7 +91,7 @@ Continuous deployment - automating the deployment of applications to selected in
 - doing so in short cycles
 - Code done -> unit tests -> integrate -> acceptance test -> deploy to production (each step is automated)
 
-- Jenkins is a CI/CD server, facilitates CI/CD by can building, testing and deploying software.
+- Jenkins is a CI/CD server, facilitates CI/CD by can buiding, testing and deploying software.
 - You can set up Jenkins to watch for any code changes in places e.g GitHub and automatically do a build.
 - You can utilize container technology such as Docker, initiate tests and then take actions like rolling back/forward in production.
 	
